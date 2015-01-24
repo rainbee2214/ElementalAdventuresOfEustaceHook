@@ -4,7 +4,7 @@ using System.Collections;
 [RequireComponent(typeof(PlayerAnimation))]
 public class PlayerPhysics : MonoBehaviour
 {
-    static string layer1 = "Enemies";
+    //static string layer1 = "Enemies";
     static string layer2 = "Ground";
     static float delta = 0.25f;
 
