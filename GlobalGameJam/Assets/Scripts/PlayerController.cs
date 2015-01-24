@@ -13,8 +13,8 @@ public class PlayerController : MonoBehaviour
 
     void FixedUpdate()
     {
-        if (Mathf.Abs(Input.GetAxisRaw("Horizontal")) > 0 ||
-            Mathf.Abs(Input.GetAxisRaw("Vertical")) > 0) playerPhysics.Move();
+        if (Mathf.Abs(Input.GetAxisRaw("Horizontal")) > 0) playerPhysics.Move(Input.GetAxisRaw("Horizontal"));
+        else playerPhysics.Idle();
 
         if (Input.GetButtonDown("Jump")) playerPhysics.Jump();
 
