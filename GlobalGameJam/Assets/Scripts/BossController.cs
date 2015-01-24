@@ -5,8 +5,11 @@ public class BossController : MonoBehaviour
 {
 	// Reference to main boss
 	// References to mini bosses
+	FireBoss fireBoss;
+	WaterBoss waterBoss;
+	MagicBoss magicBoss;
 	
-	void removeMainBossResistance(ElementType toRemove)
+	public void removeMainBossResistance(ElementType toRemove)
 	{
 		switch(toRemove)
 		{

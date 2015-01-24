@@ -5,6 +5,8 @@ public class GameController : MonoBehaviour
 {
     public static GameController controller;
 
+	public BossController bossController;
+
     void Awake()
     {
         if (controller == null)
