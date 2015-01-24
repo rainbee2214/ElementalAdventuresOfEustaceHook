@@ -6,7 +6,7 @@ public class BossController : MonoBehaviour
 	// Reference to main boss
 	// References to mini bosses
 	
-	void removeMainBossResistance(ElementType toRemove)
+	public void removeMainBossResistance(ElementType toRemove)
 	{
 		switch(toRemove)
 		{
