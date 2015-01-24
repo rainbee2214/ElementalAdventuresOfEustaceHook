@@ -60,9 +60,8 @@ public class PlayerPhysics : MonoBehaviour
             jumpLocation.y += jumpDistance;
             jumping = true;
         }
-        else
+        else if (!grounded)
         {
-            jumping = false;
             Debug.Log("Can't jump.");
         }
     }
