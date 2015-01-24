@@ -1,0 +1,102 @@
+fileFormatVersion: 2
+guid: 93b2ebc309d3e4efca927e65020709dd
+TextureImporter:
+  fileIDToRecycleName:
+    21300000: IdleLeft
+    21300002: WalkLeft
+    21300004: AttackStart
+    21300006: AttackMiddle
+    21300008: AttackEnd
+  serializedVersion: 2
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 1
+    linearTexture: 0
+    correctGamma: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: .25
+    normalMapFilter: 0
+  isReadable: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 0
+  seamlessCubemap: 0
+  textureFormat: -1
+  maxTextureSize: 1024
+  textureSettings:
+    filterMode: 0
+    aniso: 16
+    mipBias: -1
+    wrapMode: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: .5, y: .5}
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spritePixelsToUnits: 10
+  alphaIsTransparency: 1
+  textureType: 8
+  buildTargetSettings: []
+  spriteSheet:
+    sprites:
+    - name: IdleLeft
+      rect:
+        serializedVersion: 2
+        x: 30
+        y: 441
+        width: 41
+        height: 42
+      alignment: 9
+      pivot: {x: .609031498, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: WalkLeft
+      rect:
+        serializedVersion: 2
+        x: 92
+        y: 441
+        width: 41
+        height: 42
+      alignment: 9
+      pivot: {x: .609031498, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: AttackStart
+      rect:
+        serializedVersion: 2
+        x: 30
+        y: 376
+        width: 41
+        height: 42
+      alignment: 9
+      pivot: {x: .608644724, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: AttackMiddle
+      rect:
+        serializedVersion: 2
+        x: 90
+        y: 376
+        width: 41
+        height: 40
+      alignment: 9
+      pivot: {x: .677050889, y: .472290039}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: AttackEnd
+      rect:
+        serializedVersion: 2
+        x: 147
+        y: 376
+        width: 47
+        height: 38
+      alignment: 9
+      pivot: {x: .740997016, y: .453329802}
+      border: {x: 0, y: 0, z: 0, w: 0}
+  spritePackingTag: 
+  userData: 
