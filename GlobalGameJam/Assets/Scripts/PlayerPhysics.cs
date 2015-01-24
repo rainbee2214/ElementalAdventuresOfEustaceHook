@@ -54,15 +54,12 @@ public class PlayerPhysics : MonoBehaviour
 
         position.x += x * speed * Time.deltaTime;
 
-        Debug.Log(x);
         if (x > 0)
         {
             playerAnimation.WalkRight();
-            Debug.Log("Walking right.");
         }
         else if (x < 0)
         {
-            Debug.Log("Walking left.");
             playerAnimation.WalkLeft();
         }
 
@@ -84,14 +81,12 @@ public class PlayerPhysics : MonoBehaviour
         }
         else if (!grounded)
         {
-            Debug.Log("Can't jump.");
+            //Debug.Log("Can't jump.");
         }
     }
 
     public void IsGrounded()
     {
-        //Debug.DrawRay(transform.position, new Vector2(0f, -1.5f), Color.white);
-
         int layerMask = 1 << LayerMask.NameToLayer(layer2);
         RaycastHit2D hit = Physics2D.Raycast(transform.position, -Vector2.up, 1.5f, layerMask);
         if (hit.collider != null)
