@@ -12,7 +12,7 @@ AnimatorController:
     m_Type: 4
     m_DefaultFloat: 0
     m_DefaultInt: 0
-    m_DefaultBool: 0
+    m_DefaultBool: 1
     m_Controller: {fileID: 9100000}
   - m_Name: WalkRight
     m_Type: 4
@@ -491,16 +491,22 @@ StateMachine:
   m_ChildStateMachinePosition: []
   m_OrderedTransitions:
     data:
-      first: {fileID: 110242938}
+      first: {fileID: 110242944}
       second:
-      - {fileID: 110153030}
-      - {fileID: 110194794}
+      - {fileID: 110188800}
+      - {fileID: 110139794}
+      - {fileID: 110130096}
     data:
-      first: {fileID: 110242940}
+      first: {fileID: 110242948}
       second:
-      - {fileID: 110189158}
-      - {fileID: 110109946}
-      - {fileID: 110105686}
+      - {fileID: 110116802}
+      - {fileID: 110107430}
+      - {fileID: 110147056}
+    data:
+      first: {fileID: 110242946}
+      second:
+      - {fileID: 110198476}
+      - {fileID: 110178494}
     data:
       first: {fileID: 110242942}
       second:
@@ -508,22 +514,16 @@ StateMachine:
       - {fileID: 110179968}
       - {fileID: 110133972}
     data:
-      first: {fileID: 110242944}
+      first: {fileID: 110242940}
       second:
-      - {fileID: 110188800}
-      - {fileID: 110139794}
-      - {fileID: 110130096}
+      - {fileID: 110189158}
+      - {fileID: 110109946}
+      - {fileID: 110105686}
     data:
-      first: {fileID: 110242946}
+      first: {fileID: 110242938}
       second:
-      - {fileID: 110198476}
-      - {fileID: 110178494}
-    data:
-      first: {fileID: 110242948}
-      second:
-      - {fileID: 110116802}
-      - {fileID: 110107430}
-      - {fileID: 110147056}
+      - {fileID: 110153030}
+      - {fileID: 110194794}
   m_MotionSetCount: 1
   m_AnyStatePosition: {x: 24, y: -48, z: 0}
   m_ParentStateMachinePosition: {x: 800, y: 20, z: 0}
