@@ -38,6 +38,20 @@ public class EnemyBase : MonoBehaviour
 		set { strength += value; }
 	}
 
+	float attackRange;
+	public float AttackRange
+	{
+		get { return attackRange; }
+		set { attackRange = value; }
+	}
+
+	float viewRange;
+	public float ViewRange
+	{
+		get { return viewRange; }
+		set { viewRange = value; }
+	}
+
 	ElementStat elementAttack;
 	public ElementStat ElementAttack
 	{
