@@ -6,9 +6,9 @@ TextureImporter:
     21300002: HookshotTail
     21300004: HookshotHead
     21300006: HookshotLink
-    21300008: Hookshot_Sprites_4
-    21300010: Hookshot_Sprites_5
-    21300012: Hookshot_Sprites_6
+    21300008: HookshotLink2
+    21300010: HookshotLink4
+    21300012: HookshotLink8
   serializedVersion: 2
   mipmaps:
     mipMapMode: 0
@@ -44,7 +44,7 @@ TextureImporter:
   alignment: 0
   spritePivot: {x: .5, y: .5}
   spriteBorder: {x: 0, y: 0, z: 0, w: 0}
-  spritePixelsToUnits: 10
+  spritePixelsToUnits: 15
   alphaIsTransparency: 1
   textureType: 8
   buildTargetSettings: []
@@ -90,7 +90,7 @@ TextureImporter:
       alignment: 0
       pivot: {x: .5, y: .5}
       border: {x: 0, y: 0, z: 0, w: 0}
-    - name: Hookshot_Sprites_4
+    - name: HookshotLink2
       rect:
         serializedVersion: 2
         x: 39
@@ -98,9 +98,9 @@ TextureImporter:
         width: 16
         height: 4
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: .5, y: .5}
       border: {x: 0, y: 0, z: 0, w: 0}
-    - name: Hookshot_Sprites_5
+    - name: HookshotLink4
       rect:
         serializedVersion: 2
         x: 18
@@ -108,9 +108,9 @@ TextureImporter:
         width: 32
         height: 4
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: .5, y: .5}
       border: {x: 0, y: 0, z: 0, w: 0}
-    - name: Hookshot_Sprites_6
+    - name: HookshotLink8
       rect:
         serializedVersion: 2
         x: 18
@@ -118,7 +118,7 @@ TextureImporter:
         width: 64
         height: 4
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: .5, y: .5}
       border: {x: 0, y: 0, z: 0, w: 0}
   spritePackingTag: 
   userData: 

@@ -1,0 +1,256 @@
+fileFormatVersion: 2
+guid: 63d6f41d51bb9b643bdd4f4c35bf5832
+TextureImporter:
+  fileIDToRecycleName:
+    21300000: RangedEnemy_Sprites_0
+    21300002: RangedEnemy_Sprites_1
+    21300004: RangedEnemy_Sprites_2
+    21300006: RangedEnemy_Sprites_3
+    21300008: RangedEnemy_Sprites_4
+    21300010: RangedEnemy_Sprites_5
+    21300012: RangedEnemy_Sprites_6
+    21300014: RangedEnemy_Sprites_7
+    21300016: RangedEnemy_Sprites_8
+    21300018: RangedEnemy_Sprites_9
+    21300020: RangedEnemy_Sprites_10
+    21300022: RangedEnemy_Sprites_11
+    21300024: RangedEnemy_Sprites_27
+    21300026: RangedEnemy_Sprites_28
+    21300028: RangedEnemy_Sprites_29
+    21300030: RangedEnemy_Sprites_30
+    21300032: RangedEnemy_Sprites_31
+    21300034: RangedEnemy_Sprites_32
+    21300036: RangedEnemy_Sprites_18
+  serializedVersion: 2
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 1
+    linearTexture: 0
+    correctGamma: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: .25
+    normalMapFilter: 0
+  isReadable: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 0
+  seamlessCubemap: 0
+  textureFormat: -1
+  maxTextureSize: 1024
+  textureSettings:
+    filterMode: 0
+    aniso: 16
+    mipBias: -1
+    wrapMode: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: .5, y: .5}
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spritePixelsToUnits: 10
+  alphaIsTransparency: 1
+  textureType: 8
+  buildTargetSettings: []
+  spriteSheet:
+    sprites:
+    - name: RangedEnemy_Sprites_0
+      rect:
+        serializedVersion: 2
+        x: 12
+        y: 185
+        width: 22
+        height: 5
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: RangedEnemy_Sprites_1
+      rect:
+        serializedVersion: 2
+        x: 11
+        y: 144
+        width: 19
+        height: 34
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: RangedEnemy_Sprites_2
+      rect:
+        serializedVersion: 2
+        x: 48
+        y: 144
+        width: 19
+        height: 34
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: RangedEnemy_Sprites_3
+      rect:
+        serializedVersion: 2
+        x: 12
+        y: 120
+        width: 5
+        height: 4
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: RangedEnemy_Sprites_4
+      rect:
+        serializedVersion: 2
+        x: 19
+        y: 120
+        width: 8
+        height: 4
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: RangedEnemy_Sprites_5
+      rect:
+        serializedVersion: 2
+        x: 28
+        y: 119
+        width: 5
+        height: 5
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: RangedEnemy_Sprites_6
+      rect:
+        serializedVersion: 2
+        x: 34
+        y: 119
+        width: 4
+        height: 4
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: RangedEnemy_Sprites_7
+      rect:
+        serializedVersion: 2
+        x: 40
+        y: 118
+        width: 4
+        height: 5
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: RangedEnemy_Sprites_8
+      rect:
+        serializedVersion: 2
+        x: 10
+        y: 74
+        width: 19
+        height: 34
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: RangedEnemy_Sprites_9
+      rect:
+        serializedVersion: 2
+        x: 53
+        y: 74
+        width: 20
+        height: 34
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: RangedEnemy_Sprites_10
+      rect:
+        serializedVersion: 2
+        x: 91
+        y: 74
+        width: 28
+        height: 34
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: RangedEnemy_Sprites_11
+      rect:
+        serializedVersion: 2
+        x: 137
+        y: 74
+        width: 29
+        height: 34
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: RangedEnemy_Sprites_27
+      rect:
+        serializedVersion: 2
+        x: 11
+        y: 20
+        width: 5
+        height: 9
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: RangedEnemy_Sprites_28
+      rect:
+        serializedVersion: 2
+        x: 26
+        y: 18
+        width: 13
+        height: 13
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: RangedEnemy_Sprites_29
+      rect:
+        serializedVersion: 2
+        x: 55
+        y: 16
+        width: 23
+        height: 15
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: RangedEnemy_Sprites_30
+      rect:
+        serializedVersion: 2
+        x: 92
+        y: 16
+        width: 25
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: RangedEnemy_Sprites_31
+      rect:
+        serializedVersion: 2
+        x: 129
+        y: 9
+        width: 11
+        height: 25
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: RangedEnemy_Sprites_32
+      rect:
+        serializedVersion: 2
+        x: 155
+        y: 7
+        width: 14
+        height: 28
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: RangedEnemy_Sprites_18
+      rect:
+        serializedVersion: 2
+        x: 176
+        y: 8
+        width: 21
+        height: 27
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+  spritePackingTag: 
+  userData: 
