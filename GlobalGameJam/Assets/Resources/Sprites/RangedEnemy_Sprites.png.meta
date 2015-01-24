@@ -62,16 +62,6 @@ TextureImporter:
   buildTargetSettings: []
   spriteSheet:
     sprites:
-    - name: RangedEnemy_Sprites_0
-      rect:
-        serializedVersion: 2
-        x: 12
-        y: 185
-        width: 22
-        height: 5
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
     - name: RangedEnemy_Sprites_1
       rect:
         serializedVersion: 2
@@ -80,7 +70,7 @@ TextureImporter:
         width: 19
         height: 34
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: .5, y: .5}
       border: {x: 0, y: 0, z: 0, w: 0}
     - name: RangedEnemy_Sprites_2
       rect:
@@ -90,57 +80,7 @@ TextureImporter:
         width: 19
         height: 34
       alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-    - name: RangedEnemy_Sprites_3
-      rect:
-        serializedVersion: 2
-        x: 12
-        y: 120
-        width: 5
-        height: 4
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-    - name: RangedEnemy_Sprites_4
-      rect:
-        serializedVersion: 2
-        x: 19
-        y: 120
-        width: 8
-        height: 4
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-    - name: RangedEnemy_Sprites_5
-      rect:
-        serializedVersion: 2
-        x: 28
-        y: 119
-        width: 5
-        height: 5
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-    - name: RangedEnemy_Sprites_6
-      rect:
-        serializedVersion: 2
-        x: 34
-        y: 119
-        width: 4
-        height: 4
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-    - name: RangedEnemy_Sprites_7
-      rect:
-        serializedVersion: 2
-        x: 40
-        y: 118
-        width: 4
-        height: 5
-      alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: .5, y: .5}
       border: {x: 0, y: 0, z: 0, w: 0}
     - name: RangedEnemy_Sprites_8
       rect:
@@ -150,7 +90,7 @@ TextureImporter:
         width: 19
         height: 34
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: .5, y: .5}
       border: {x: 0, y: 0, z: 0, w: 0}
     - name: RangedEnemy_Sprites_9
       rect:
@@ -160,7 +100,7 @@ TextureImporter:
         width: 20
         height: 34
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: .5, y: .5}
       border: {x: 0, y: 0, z: 0, w: 0}
     - name: RangedEnemy_Sprites_10
       rect:
@@ -170,7 +110,7 @@ TextureImporter:
         width: 28
         height: 34
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: .5, y: .5}
       border: {x: 0, y: 0, z: 0, w: 0}
     - name: RangedEnemy_Sprites_11
       rect:
@@ -180,7 +120,7 @@ TextureImporter:
         width: 29
         height: 34
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: .5, y: .5}
       border: {x: 0, y: 0, z: 0, w: 0}
     - name: RangedEnemy_Sprites_27
       rect:
@@ -190,7 +130,7 @@ TextureImporter:
         width: 5
         height: 9
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: .5, y: .5}
       border: {x: 0, y: 0, z: 0, w: 0}
     - name: RangedEnemy_Sprites_28
       rect:
@@ -200,7 +140,7 @@ TextureImporter:
         width: 13
         height: 13
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: .5, y: .5}
       border: {x: 0, y: 0, z: 0, w: 0}
     - name: RangedEnemy_Sprites_29
       rect:
@@ -210,7 +150,7 @@ TextureImporter:
         width: 23
         height: 15
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: .5, y: .5}
       border: {x: 0, y: 0, z: 0, w: 0}
     - name: RangedEnemy_Sprites_30
       rect:
@@ -220,7 +160,7 @@ TextureImporter:
         width: 25
         height: 16
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: .5, y: .5}
       border: {x: 0, y: 0, z: 0, w: 0}
     - name: RangedEnemy_Sprites_31
       rect:
