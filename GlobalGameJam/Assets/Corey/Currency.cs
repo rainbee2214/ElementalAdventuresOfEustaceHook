@@ -46,14 +46,4 @@ public class Currency : MonoBehaviour
             Debug.Log("You have gained a coin.");
         }
     }
-
-    void Start () 
-    {
-    
-    }
-    
-    void Update () 
-    {
-    
-    }
 }
