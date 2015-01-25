@@ -7,7 +7,7 @@ public class GenerateChest : MonoBehaviour {
     GameObject chest;
     public int poolSize = 10;
     List<GameObject> objectPool;
-    Vector2 startingPosition = new Vector2(-5f, 1f); 
+    Vector2 startingPosition = new Vector2(-5f, 1f);
 
     void Awake()
     {
@@ -36,7 +36,6 @@ public class GenerateChest : MonoBehaviour {
             objectPool[i].SetActive(false);
         }
         CreateChest();
-
     }
 
 }
