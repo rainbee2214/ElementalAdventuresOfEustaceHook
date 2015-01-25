@@ -40,4 +40,9 @@ public class HookshotController : MonoBehaviour
     {
         anim.SetTrigger(length+"");
     }
+
+    void OnCollisionEnter2D(Collision2D other)
+    {
+        Debug.Log(other.gameObject.tag);
+    }
 }
