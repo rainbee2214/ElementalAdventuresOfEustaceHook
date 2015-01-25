@@ -26,7 +26,7 @@ public class GenerateDisplayHearts : MonoBehaviour {
 
         emptyHeart = Resources.Load("Prefabs/EmptyHeart", typeof(GameObject)) as GameObject;
         objectPool2 = new List<GameObject>();
-        for (int i = 0; i < poolSize; i++)
+        for (int i = 0; i < poolSize-10; i++)
         {
             objectPool2.Add(Instantiate(emptyHeart) as GameObject);
             objectPool2[i].transform.parent = transform;
@@ -46,11 +46,15 @@ public class GenerateDisplayHearts : MonoBehaviour {
         {
             objectPool[i].GetComponent<Heart>().TurnHeartOn(HeartDisplayPosition);
             HeartDisplayPosition.x += 1.5f;
+            if (i == 20)
+                i = 0;
         }
-        for (int i = GameController.controller.playerStats.Health; i <= poolSize-10; i++)
+        for (int i = GameController.controller.playerStats.Health; i <= poolSize-11; i++)
         {
-            objectPool[i].GetComponent<Heart>().TurnEmptyHeartOn(HeartDisplayPosition);
+            objectPool2[i].GetComponent<EmptyHeart>().TurnEmptyHeartOn(HeartDisplayPosition);
             HeartDisplayPosition.x += 1.5f;
+            if (i == 10)
+                i = 0;
         }
     }
 
