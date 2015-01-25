@@ -700,6 +700,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0f004dc6541d4c24d83b6024c8b5b14c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  playerPhysics: {fileID: 0}
+  ableToMove: 1
 --- !u!114 &1539170435
 MonoBehaviour:
   m_ObjectHideFlags: 0
