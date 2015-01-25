@@ -524,6 +524,7 @@ GameObject:
   - 114: {fileID: 1660221989}
   - 212: {fileID: 1660221991}
   - 95: {fileID: 1660221990}
+  - 114: {fileID: 1660221992}
   m_Layer: 0
   m_Name: Hookshot
   m_TagString: Untagged
@@ -604,6 +605,19 @@ SpriteRenderer:
   m_SortingOrder: 0
   m_Sprite: {fileID: 0}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
+--- !u!114 &1660221992
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1660221986}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9c7759a33db2fa544b8136dcfc0f0496, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  mousePosition: {x: 0, y: 0}
+  position: {x: 0, y: 0}
 --- !u!1 &1699312964
 GameObject:
   m_ObjectHideFlags: 0
