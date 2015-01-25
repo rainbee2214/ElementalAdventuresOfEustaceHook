@@ -23,7 +23,7 @@ public class HookshotController : MonoBehaviour
     {
         Vector3 mousePos = Camera.main.ScreenToWorldPoint(Input.mousePosition);
         Vector2 mousePosition = mousePos;
-        //Debug.Log(mousePosition);
+        Debug.Log(mousePosition);
         if (Input.GetButtonDown("Fire3")) extend = true;
         if (extend) Extend(); 
     }
