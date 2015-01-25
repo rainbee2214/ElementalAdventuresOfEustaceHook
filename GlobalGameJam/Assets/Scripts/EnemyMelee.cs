@@ -28,6 +28,10 @@ public class EnemyMelee : EnemyBase
 	public Animator anim;
 //	CircleCollider2D attackTrigger;
 
+    float attackDelay = 1f;
+    float nextAttackTime;
+    bool isAttacking;
+
 	void Start()
 	{
 		// Setup health, strength
@@ -46,7 +50,7 @@ public class EnemyMelee : EnemyBase
 		
 		// Setup resistance & weakness, ensure weakness is not the same as resistance
 		BuffStat res;
-		res.type = Utility.GetRandomEnum<ElementType>();
+        res.type = ElementType.Magic;//Utility.GetRandomEnum<ElementType>();
 		res.value = resistanceMultiplier;
 		Resistance = res;
 		
@@ -86,19 +90,25 @@ public class EnemyMelee : EnemyBase
 				}
 				transform.position = Vector3.MoveTowards(transform.position, player.transform.position, Time.deltaTime);
 			}
-			else
+			else if (playerInAttackRange && !isAttacking)
 			{
-				anim.SetBool("WalkRight", false);
-				anim.SetBool("WalkLeft", false);
-				anim.SetTrigger("Attack");
+                isAttacking = true;
+                nextAttackTime = Time.time + attackDelay;
+
 			}
 		}
-		else
-		{
-			// Patrol
-			// Move to one edge of ground, then move to other
-		}
+
+        if (isAttacking && Time.time > nextAttackTime) Attack();
 	}
+
+    public void Attack()
+    {
+        anim.SetBool("WalkRight", false);
+        anim.SetBool("WalkLeft", false);
+        anim.SetTrigger("Attack");
+        GameController.controller.TakeDamage();
+        isAttacking = false;
+    }
 
 	public void Move()
 	{
@@ -107,16 +117,16 @@ public class EnemyMelee : EnemyBase
 		playerInRange = false;
 		// Create raycasts to see if player is in line of sight
 		hits[0] = Physics2D.Raycast(transform.position, Vector2.right, ViewRange, layerMask);
-//		Debug.DrawRay(transform.position, Vector2.right * ViewRange);
+		Debug.DrawRay(transform.position, Vector2.right * ViewRange);
 		hits[1] = Physics2D.Raycast(transform.position, -Vector2.right, ViewRange, layerMask);
-//		Debug.DrawRay(transform.position, -Vector2.right * ViewRange);
+		Debug.DrawRay(transform.position, -Vector2.right * ViewRange);
 
 		for (int i = 0; i < hits.Length; i++)
 		{
 			if (playerInRange) break;
 			if (hits[i].collider != null)
 			{
-				Debug.Log("Something hit" + hits[i].collider.tag);
+				//Debug.Log("Something hit " + hits[i].collider.tag);
 				if (hits[i].collider.CompareTag("Player"))
 				{
 					player = hits[i].collider.gameObject;
@@ -129,7 +139,7 @@ public class EnemyMelee : EnemyBase
      
 		// Do attack range raycast
 		hits[0] = Physics2D.Raycast(transform.position, currentDirection, AttackRange, layerMask);
-		Debug.DrawRay(transform.position, currentDirection * AttackRange);
+		Debug.DrawRay(transform.position, currentDirection * AttackRange, Color.red);
 		if (hits[0].collider != null)
 		{
 			if (hits[0].collider.CompareTag("Player"))
@@ -171,14 +181,18 @@ public class EnemyMelee : EnemyBase
 
 	void OnCollisionEnter2D(Collision2D collision)
 	{
-		if (collision.gameObject.tag == "Hookshot")
+		if (collision.gameObject.tag == "Player")
 		{
-			// Get damage from player and fix below
-			ElementStat attack;
-			attack.type = ElementType.Fire;
-			attack.value = 1;
-			// Above to be replaced from player
-			TakeDamage(attack);
+            ElementStat attack;
+            attack.type = ElementType.Fire;
+            attack.value = 1;
+            TakeDamage(attack);
+            Debug.Log(Health);
 		}
+
+        if (Health <= 0)
+        {
+            Destroy(gameObject);
+        }
 	}
 }

@@ -15,6 +15,7 @@ TextureImporter:
     21300020: LevelDesign_10
     21300022: LevelDesign_11
     21300024: LevelDesign_12
+    21300026: Wall
   serializedVersion: 2
   mipmaps:
     mipMapMode: 0
@@ -64,7 +65,7 @@ TextureImporter:
         width: 34
         height: 34
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: .5, y: .5}
       border: {x: 0, y: 0, z: 0, w: 0}
     - name: LevelDesign_1
       rect:
@@ -74,7 +75,7 @@ TextureImporter:
         width: 34
         height: 34
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: .5, y: .5}
       border: {x: 0, y: 0, z: 0, w: 0}
     - name: LevelDesign_2
       rect:
@@ -84,7 +85,7 @@ TextureImporter:
         width: 34
         height: 34
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: .5, y: .5}
       border: {x: 0, y: 0, z: 0, w: 0}
     - name: LevelDesign_3
       rect:
@@ -94,7 +95,7 @@ TextureImporter:
         width: 242
         height: 214
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: .5, y: .5}
       border: {x: 0, y: 0, z: 0, w: 0}
     - name: Ground2
       rect:
@@ -114,7 +115,7 @@ TextureImporter:
         width: 124
         height: 34
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: .5, y: .5}
       border: {x: 0, y: 0, z: 0, w: 0}
     - name: LevelDesign_6
       rect:
@@ -124,7 +125,7 @@ TextureImporter:
         width: 34
         height: 34
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: .5, y: .5}
       border: {x: 0, y: 0, z: 0, w: 0}
     - name: Ground
       rect:
@@ -144,7 +145,7 @@ TextureImporter:
         width: 34
         height: 94
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: .5, y: .5}
       border: {x: 0, y: 0, z: 0, w: 0}
     - name: LevelDesign_9
       rect:
@@ -154,7 +155,7 @@ TextureImporter:
         width: 122
         height: 34
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: .5, y: .5}
       border: {x: 0, y: 0, z: 0, w: 0}
     - name: LevelDesign_10
       rect:
@@ -164,7 +165,7 @@ TextureImporter:
         width: 123
         height: 34
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: .5, y: .5}
       border: {x: 0, y: 0, z: 0, w: 0}
     - name: LevelDesign_11
       rect:
@@ -174,7 +175,7 @@ TextureImporter:
         width: 32
         height: 34
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: .5, y: .5}
       border: {x: 0, y: 0, z: 0, w: 0}
     - name: LevelDesign_12
       rect:
@@ -184,7 +185,17 @@ TextureImporter:
         width: 32
         height: 34
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: Wall
+      rect:
+        serializedVersion: 2
+        x: 734
+        y: 581
+        width: 183
+        height: 963
+      alignment: 0
+      pivot: {x: .5, y: .5}
       border: {x: 0, y: 0, z: 0, w: 0}
   spritePackingTag: 
   userData: 

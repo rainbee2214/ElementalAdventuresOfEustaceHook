@@ -74,18 +74,18 @@ public class HookshotController : MonoBehaviour
 
     void MovePlayerToPoint()
     {
-        if (player.transform.position.x + delta > collisionPoint.x && player.transform.position.y + delta > collisionPoint.y)
-        {
-            player.rigidbody2D.gravityScale = playerController.playerPhysics.gravityScale;
-            Debug.Log("Reach collision point!");
-            movePlayer = false;
-        }
-        else
-        {
-            //player.rigidbody2D.gravityScale = 0f;
-            //player.transform.position = Vector2.Lerp(player.transform.position, collisionPoint, Time.deltaTime * moveSpeed);
-            //Debug.Log("Moving player " + player.transform.position + " " + collisionPoint);
-        }
+        //if (player.transform.position.x + delta > collisionPoint.x && player.transform.position.y + delta > collisionPoint.y)
+        //{
+        //    player.rigidbody2D.gravityScale = playerController.playerPhysics.gravityScale;
+        //    Debug.Log("Reach collision point!");
+        //    movePlayer = false;
+        //}
+        //else
+        //{
+        //    //player.rigidbody2D.gravityScale = 0f;
+        //    //player.transform.position = Vector2.Lerp(player.transform.position, collisionPoint, Time.deltaTime * moveSpeed);
+        //    //Debug.Log("Moving player " + player.transform.position + " " + collisionPoint);
+        //}
     }
 
     void ExtendAnimation(int length)

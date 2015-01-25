@@ -5,28 +5,28 @@ public class EnemyBase : MonoBehaviour
 {
 	#region Properties
 
-	int health;
+	int health = 10;
 	public int Health
 	{
 		get { return health; }
 		set { health += value; }
 	}
 
-	int strength;
+	int strength = 1;
 	public int Strength
 	{
 		get { return strength; }
 		set { strength += value; }
 	}
 
-	float attackRange;
+	float attackRange = 1f;
 	public float AttackRange
 	{
 		get { return attackRange; }
 		set { attackRange = value; }
 	}
 
-	float viewRange;
+	float viewRange = 1f;
 	public float ViewRange
 	{
 		get { return viewRange; }

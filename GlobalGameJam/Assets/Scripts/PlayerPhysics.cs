@@ -31,7 +31,7 @@ public class PlayerPhysics : MonoBehaviour
 
     void FixedUpdate()
     {
-        
+
         if (jumping)
         {
             rigidbody2D.gravityScale = 0;
@@ -41,7 +41,10 @@ public class PlayerPhysics : MonoBehaviour
                 jumping = false;
             }
         }
-        else rigidbody2D.gravityScale = gravityScale;
+        else
+        {
+            rigidbody2D.gravityScale = gravityScale;
+        }
     }
 
     public bool Grounded
@@ -57,13 +60,9 @@ public class PlayerPhysics : MonoBehaviour
         position.x += x * speed * Time.deltaTime;
 
         if (x > 0)
-        {
             playerAnimation.WalkRight();
-        }
         else if (x < 0)
-        {
             playerAnimation.WalkLeft();
-        }
 
         transform.position = position;
     }
@@ -80,7 +79,7 @@ public class PlayerPhysics : MonoBehaviour
             jumpLocation = transform.position;
             jumpLocation.y += jumpDistance;
             jumping = true;
-            Debug.Log("Jumping");
+            Debug.Log("Jumping " + jumpLocation);
         }
     }
 

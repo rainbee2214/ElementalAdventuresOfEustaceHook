@@ -26,7 +26,7 @@ public class GenerateDisplayHearts : MonoBehaviour {
 
         emptyHeart = Resources.Load("Prefabs/EmptyHeart", typeof(GameObject)) as GameObject;
         objectPool2 = new List<GameObject>();
-        for (int i = 0; i < poolSize; i++)
+        for (int i = 0; i < poolSize-10; i++)
         {
             objectPool2.Add(Instantiate(emptyHeart) as GameObject);
             objectPool2[i].transform.parent = transform;
@@ -41,28 +41,32 @@ public class GenerateDisplayHearts : MonoBehaviour {
     {
         ScreenW = Screen.width;
         ScreenH = Screen.height;
-        HeartDisplayPosition = new Vector2(ScreenW - ScreenW / 10f, ScreenH - ScreenH / 10f);
+        HeartDisplayPosition = new Vector2(ScreenW - ScreenW, ScreenH - ScreenH + 10);
         for (int i = 0; i < GameController.controller.playerStats.Health; i++ )
         {
             objectPool[i].GetComponent<Heart>().TurnHeartOn(HeartDisplayPosition);
             HeartDisplayPosition.x += 1.5f;
+            if (i == 20)
+                i = 0;
         }
-        for (int i = GameController.controller.playerStats.Health; i <= poolSize-10; i++)
+        for (int i = GameController.controller.playerStats.Health; i <= poolSize-11; i++)
         {
-            objectPool[i].GetComponent<Heart>().TurnEmptyHeartOn(HeartDisplayPosition);
+            objectPool2[i].GetComponent<EmptyHeart>().TurnEmptyHeartOn(HeartDisplayPosition);
             HeartDisplayPosition.x += 1.5f;
+            if (i == 10)
+                i = 0;
         }
     }
 
-	// Use this for initialization
-	void Start () 
+    // Use this for initialization
+    void Start () 
     {
-	    CreatePool();
-	}
-	
-	// Update is called once per frame
-	void Update () 
-    {
+        CreatePool();
         DisplayHealth();
-	}
+    }
+    
+    // Update is called once per frame
+    void Update () 
+    {
+    }
 }

@@ -17,6 +17,8 @@ public class GameController : MonoBehaviour
 	public int startWaterStat;
 	public int startMagicStat;
 
+    public bool dead;
+
     void Awake()
     {
         if (controller == null)
@@ -38,7 +40,11 @@ public class GameController : MonoBehaviour
 
     void Update()
     {
-
+        if(dead)
+        {
+            dead = false;
+            Application.LoadLevel("GameOver");
+        }
     }
 
 	void SetupPlayerStats()
@@ -61,4 +67,15 @@ public class GameController : MonoBehaviour
 		genericStat.value = startMagicStat;
 		playerStats.MagicStat = genericStat;
 	}
+
+    public int GetHealth()
+    {
+        return playerStats.Health;
+    }
+
+    public void TakeDamage()
+    {
+        playerStats.Health = -1;
+        if (playerStats.Health <= 0) dead = true;
+    }
 }

@@ -35,7 +35,7 @@ public class Chest : MonoBehaviour {
         int num2 = num / 2;
 
         if (num2 == 0) num2 = 1;
-        Debug.Log(num1 + " " + num2);
+        //Debug.Log(num1 + " " + num2);
         for (int i = 0; i < num1; i++)
         {
             //Debug.Log("Generating coins!");

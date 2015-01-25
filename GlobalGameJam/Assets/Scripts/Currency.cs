@@ -43,7 +43,7 @@ public class Currency : MonoBehaviour
         if (other.tag == "Player")
         {
             ResetCoin();
-            Debug.Log("You have gained a coin.");
+            //Debug.Log("You have gained a coin.");
         }
     }
 }
