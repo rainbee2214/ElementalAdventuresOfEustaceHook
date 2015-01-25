@@ -41,7 +41,7 @@ public class GenerateDisplayHearts : MonoBehaviour {
     {
         ScreenW = Screen.width;
         ScreenH = Screen.height;
-        HeartDisplayPosition = new Vector2(ScreenW - ScreenW / 10f, ScreenH - ScreenH / 10f);
+        HeartDisplayPosition = new Vector2(ScreenW - ScreenW, ScreenH - ScreenH + 10);
         for (int i = 0; i < GameController.controller.playerStats.Health; i++ )
         {
             objectPool[i].GetComponent<Heart>().TurnHeartOn(HeartDisplayPosition);
@@ -62,11 +62,11 @@ public class GenerateDisplayHearts : MonoBehaviour {
     void Start () 
     {
         CreatePool();
+        DisplayHealth();
     }
     
     // Update is called once per frame
     void Update () 
     {
-        DisplayHealth();
     }
 }
