@@ -2,8 +2,9 @@
 using System.Collections;
 using System.Collections.Generic;
 
-public class GenerateCurrency : MonoBehaviour {
-
+public class GenerateCurrency : MonoBehaviour 
+{
+    Vector2 startPosition = new Vector2(5f, 2f);
     static int startCounter = 5;
     GameObject coin;
     public int poolSize = 10;
@@ -12,7 +13,8 @@ public class GenerateCurrency : MonoBehaviour {
 
     public void CreateCoin()
     {
-        objectPool[counter].transform.position = Vector2.zero;
+        objectPool[counter].transform.position = startPosition;
+        objectPool[counter].SetActive(true);
         counter++;
         if (counter >= objectPool.Count)
             counter = startCounter;
@@ -37,6 +39,7 @@ public class GenerateCurrency : MonoBehaviour {
         for (int i = 0; i < 5; i++)
         {
             CreateCoin();
+            startPosition.x += -1.5f;
         }
     }
 

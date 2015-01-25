@@ -34,6 +34,7 @@ public class Currency : MonoBehaviour
 
     public void TurnCoinOn(Vector2 newPosition)
     {
+        Debug.Log("Coin made.");
         gameObject.SetActive(true);
         transform.position = newPosition;
     }
