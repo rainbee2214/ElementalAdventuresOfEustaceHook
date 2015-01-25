@@ -1,0 +1,300 @@
+fileFormatVersion: 2
+guid: 24bf019d80b8a8a4ead75f54ab7bf9cb
+TextureImporter:
+  fileIDToRecycleName:
+    21300000: LongHookShot_Sprites_0
+    21300002: LinkTail
+    21300004: LinkHead
+    21300006: Link1
+    21300008: Link2
+    21300010: Link3
+    21300012: Link4
+    21300014: Link5
+    21300016: Link6
+    21300018: Link7
+    21300020: Link8
+    21300022: Link9
+    21300024: Link10
+    21300026: Link11
+    21300028: Link12
+    21300030: Link13
+    21300032: Link14
+    21300034: Link15
+    21300036: Link16
+    21300038: Link17
+    21300040: Link18
+    21300042: Link19
+    21300044: Link20
+  serializedVersion: 2
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 1
+    linearTexture: 0
+    correctGamma: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: .25
+    normalMapFilter: 0
+  isReadable: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 0
+  seamlessCubemap: 0
+  textureFormat: -1
+  maxTextureSize: 1024
+  textureSettings:
+    filterMode: 0
+    aniso: 16
+    mipBias: -1
+    wrapMode: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: .5, y: .5}
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spritePixelsToUnits: 15
+  alphaIsTransparency: 1
+  textureType: 8
+  buildTargetSettings: []
+  spriteSheet:
+    sprites:
+    - name: LongHookShot_Sprites_0
+      rect:
+        serializedVersion: 2
+        x: 71
+        y: 641
+        width: 50
+        height: 9
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: LinkTail
+      rect:
+        serializedVersion: 2
+        x: 71
+        y: 623
+        width: 6
+        height: 6
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: LinkHead
+      rect:
+        serializedVersion: 2
+        x: 92
+        y: 622
+        width: 9
+        height: 9
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: Link1
+      rect:
+        serializedVersion: 2
+        x: 71
+        y: 611
+        width: 8
+        height: 4
+      alignment: 4
+      pivot: {x: 0, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: Link2
+      rect:
+        serializedVersion: 2
+        x: 72
+        y: 599
+        width: 16
+        height: 4
+      alignment: 4
+      pivot: {x: 0, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: Link3
+      rect:
+        serializedVersion: 2
+        x: 72
+        y: 587
+        width: 24
+        height: 4
+      alignment: 4
+      pivot: {x: 0, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: Link4
+      rect:
+        serializedVersion: 2
+        x: 72
+        y: 572
+        width: 32
+        height: 4
+      alignment: 4
+      pivot: {x: 0, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: Link5
+      rect:
+        serializedVersion: 2
+        x: 72
+        y: 560
+        width: 40
+        height: 4
+      alignment: 4
+      pivot: {x: 0, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: Link6
+      rect:
+        serializedVersion: 2
+        x: 71
+        y: 544
+        width: 48
+        height: 4
+      alignment: 4
+      pivot: {x: 0, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: Link7
+      rect:
+        serializedVersion: 2
+        x: 71
+        y: 528
+        width: 56
+        height: 4
+      alignment: 4
+      pivot: {x: 0, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: Link8
+      rect:
+        serializedVersion: 2
+        x: 71
+        y: 511
+        width: 64
+        height: 4
+      alignment: 4
+      pivot: {x: 0, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: Link9
+      rect:
+        serializedVersion: 2
+        x: 72
+        y: 496
+        width: 72
+        height: 4
+      alignment: 4
+      pivot: {x: 0, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: Link10
+      rect:
+        serializedVersion: 2
+        x: 72
+        y: 482
+        width: 80
+        height: 4
+      alignment: 4
+      pivot: {x: 0, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: Link11
+      rect:
+        serializedVersion: 2
+        x: 70
+        y: 465
+        width: 88
+        height: 4
+      alignment: 4
+      pivot: {x: 0, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: Link12
+      rect:
+        serializedVersion: 2
+        x: 69
+        y: 450
+        width: 96
+        height: 4
+      alignment: 4
+      pivot: {x: 0, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: Link13
+      rect:
+        serializedVersion: 2
+        x: 70
+        y: 434
+        width: 104
+        height: 4
+      alignment: 4
+      pivot: {x: 0, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: Link14
+      rect:
+        serializedVersion: 2
+        x: 67
+        y: 416
+        width: 112
+        height: 4
+      alignment: 4
+      pivot: {x: 0, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: Link15
+      rect:
+        serializedVersion: 2
+        x: 68
+        y: 398
+        width: 120
+        height: 4
+      alignment: 4
+      pivot: {x: 0, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: Link16
+      rect:
+        serializedVersion: 2
+        x: 68
+        y: 380
+        width: 128
+        height: 4
+      alignment: 4
+      pivot: {x: 0, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: Link17
+      rect:
+        serializedVersion: 2
+        x: 67
+        y: 363
+        width: 136
+        height: 4
+      alignment: 4
+      pivot: {x: 0, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: Link18
+      rect:
+        serializedVersion: 2
+        x: 67
+        y: 344
+        width: 144
+        height: 4
+      alignment: 4
+      pivot: {x: 0, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: Link19
+      rect:
+        serializedVersion: 2
+        x: 66
+        y: 326
+        width: 152
+        height: 4
+      alignment: 4
+      pivot: {x: 0, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: Link20
+      rect:
+        serializedVersion: 2
+        x: 66
+        y: 305
+        width: 160
+        height: 4
+      alignment: 4
+      pivot: {x: 0, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+  spritePackingTag: 
+  userData: 

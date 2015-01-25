@@ -6,12 +6,13 @@ public class Chest : MonoBehaviour {
 
     public bool ChestOpen = false;
     GenerateCurrency createCoin;
+    GenerateXp generateXp;
 
-    void OnTriggerStay2D(Collider2D other)
+    void OnTriggerEnter2D(Collider2D other)
     {
         if (other.tag == "Player")
         {
-            if (ChestOpen == false)
+            if (!ChestOpen)
             {
                 if(Input.GetButtonDown("Fire1"))
                 {
@@ -24,7 +25,7 @@ public class Chest : MonoBehaviour {
 
     void OpenChest()
     {
-        int num = Random.Range(0, 10);
+        int num = 7;
         int num1 = num % 4;
         int num2 = num / 2;
         for (int i = 0; i < num1; i++)
@@ -33,7 +34,7 @@ public class Chest : MonoBehaviour {
         }
         for (int i = 0; i < num2; i++)
         {
-            //Same as above but for XP
+            generateXp.CreateXp();
         }
     }
 
@@ -47,9 +48,14 @@ public class Chest : MonoBehaviour {
     void Start () 
     {
         createCoin = GameObject.Find("CoinGenerator").GetComponent<GenerateCurrency>();
+        generateXp = GameObject.Find("XpGenerator").GetComponent<GenerateXp>();
     }
     
     void Update () {
-    
+        if (Input.GetButtonDown("Fire1"))
+        {
+            OpenChest();
+            Debug.Log("Chest opened.");
+        }
     }
 }
