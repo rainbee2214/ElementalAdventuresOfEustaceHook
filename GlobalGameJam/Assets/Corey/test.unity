@@ -348,7 +348,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 427b9ca886431c6429e8d1ad4bdf4a46, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  poolSize: 20
+  poolSize: 10
   current: 0
 --- !u!4 &956553387
 Transform:

@@ -5,6 +5,7 @@ public class Xp : MonoBehaviour {
 
     Vector2 outOfView = new Vector2(-1000, -1000);
     public bool isTracking = false;
+    public float speed = 8.5f;
 
     int amount;
     public int Amount
@@ -23,7 +24,7 @@ public class Xp : MonoBehaviour {
     void Track()
     {
         Vector2 playerPosition = GameObject.Find("Player").transform.position;
-        transform.position = Vector2.MoveTowards(transform.position, playerPosition, Time.deltaTime);
+        transform.position = Vector2.MoveTowards(transform.position, playerPosition, Time.deltaTime * speed);
     }
 
     public void ResetXp()
@@ -35,9 +36,12 @@ public class Xp : MonoBehaviour {
 
     public void TurnXpOn(Vector2 newPosition)
     {
-        gameObject.SetActive(true);
-        newPosition.x += Random.Range(-15.0f, 15.1f);
+        newPosition.x += Random.Range(-16.0f, 16.1f);
         newPosition.y += Random.Range(0f, 5.1f);
+        if (newPosition.x < 5.0f && newPosition.x > -5.0f)
+            newPosition.x += 12.0f;
+        transform.position = new Vector2(newPosition.x, newPosition.y);
+        gameObject.SetActive(true);
         Debug.Log("new pos: " + newPosition);
         isTracking = true;
     }
