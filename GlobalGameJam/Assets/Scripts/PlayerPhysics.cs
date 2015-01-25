@@ -35,9 +35,11 @@ public class PlayerPhysics : MonoBehaviour
         if (jumping)
         {
             rigidbody2D.gravityScale = 0;
+            Debug.Log(rigidbody2D.gravityScale);
             transform.position = Vector2.Lerp(transform.position, jumpLocation, Time.deltaTime * jumpSpeed);
             if (Mathf.Abs(transform.position.y) + delta > Mathf.Abs(jumpLocation.y))
             {
+                Debug.Log("Jumping = false");
                 jumping = false;
             }
         }

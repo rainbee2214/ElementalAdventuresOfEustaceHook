@@ -41,21 +41,21 @@ public class GenerateDisplayHearts : MonoBehaviour {
     {
         ScreenW = Screen.width;
         ScreenH = Screen.height;
-        HeartDisplayPosition = new Vector2(ScreenW - ScreenW, ScreenH - ScreenH + 10);
-        for (int i = 0; i < GameController.controller.playerStats.Health; i++ )
+        HeartDisplayPosition = transform.position; //new Vector2(ScreenW - ScreenW, ScreenH - ScreenH + 10);
+        for (int i = 0; i < 10; i++ )
         {
             objectPool[i].GetComponent<Heart>().TurnHeartOn(HeartDisplayPosition);
             HeartDisplayPosition.x += 1.5f;
             if (i == 20)
                 i = 0;
         }
-        for (int i = GameController.controller.playerStats.Health; i <= poolSize-11; i++)
-        {
-            objectPool2[i].GetComponent<EmptyHeart>().TurnEmptyHeartOn(HeartDisplayPosition);
-            HeartDisplayPosition.x += 1.5f;
-            if (i == 10)
-                i = 0;
-        }
+        //for (int i = GameController.controller.playerStats.Health; i <= poolSize-11; i++)
+        //{
+        //    objectPool2[i].GetComponent<EmptyHeart>().TurnEmptyHeartOn(HeartDisplayPosition);
+        //    HeartDisplayPosition.x += 1.5f;
+        //    if (i == 10)
+        //        i = 0;
+        //}
     }
 
     // Use this for initialization
