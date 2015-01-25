@@ -13,8 +13,6 @@ public class Heart : MonoBehaviour {
     public int current = 0;
     public GenerateDisplayHearts generateDisplayHearts;
 
-    
-
     void OnTriggerEnter2D(Collider2D other)
     {
         if(other.tag == "Player")
@@ -26,34 +24,35 @@ public class Heart : MonoBehaviour {
 
     public void TurnHeartOn(Vector2 position)
     {
-        gameObject.SetActive(true);
+        heart.SetActive(true);
         if (position == generateDisplayHearts.HeartDisplayPosition)
         {
-            gameObject.collider2D.enabled = false;
+            heart.collider2D.enabled = false;
         }
         transform.position = position;
     }
 
     public void TurnEmptyHeartOn(Vector2 position)
     {
-        gameObject.SetActive(true);
+        emptyHeart.SetActive(true);
         transform.position = position;
     }
 
     public void ResetHeart()
     {
-        gameObject.SetActive(false);
+        heart.SetActive(false);
+        emptyHeart.SetActive(false);
         transform.position = outOfView;
     }
 
-	// Use this for initialization
-	void Start () 
+    // Use this for initialization
+    void Start () 
     {
         generateDisplayHearts = GameObject.FindGameObjectWithTag("DisplayHearts").GetComponent<GenerateDisplayHearts>();
-	}
-	
-	// Update is called once per frame
-	void Update () 
+    }
+    
+    // Update is called once per frame
+    void Update () 
     {
 
     }
