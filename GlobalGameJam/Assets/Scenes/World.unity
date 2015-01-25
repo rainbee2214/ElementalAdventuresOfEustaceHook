@@ -2809,7 +2809,6 @@ GameObject:
   - 114: {fileID: 951516983}
   - 212: {fileID: 951516982}
   - 95: {fileID: 951516981}
-  - 58: {fileID: 951516989}
   m_Layer: 10
   m_Name: Player
   m_TagString: Player
@@ -2922,7 +2921,7 @@ BoxCollider2D:
     type: 2}
   m_PrefabInternal: {fileID: 1644533240}
   m_GameObject: {fileID: 951516980}
-  m_Enabled: 0
+  m_Enabled: 1
   m_Material: {fileID: 0}
   m_IsTrigger: 0
   m_Size: {x: 1, y: 2.5}
@@ -2941,18 +2940,6 @@ Transform:
   - {fileID: 864611537}
   m_Father: {fileID: 0}
   m_RootOrder: 2
---- !u!58 &951516989
-CircleCollider2D:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 5834740, guid: 15df8b6cfee6bc64aab0706457bf6122,
-    type: 2}
-  m_PrefabInternal: {fileID: 1644533240}
-  m_GameObject: {fileID: 951516980}
-  m_Enabled: 1
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Radius: .720000029
-  m_Center: {x: .389999986, y: -.649999976}
 --- !u!1001 &1019772872
 Prefab:
   m_ObjectHideFlags: 0
@@ -5401,7 +5388,12 @@ Prefab:
       propertyPath: speed
       value: 10
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    - target: {fileID: 6169010, guid: 15df8b6cfee6bc64aab0706457bf6122, type: 2}
+      propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
+    m_RemovedComponents:
+    - {fileID: 5834740, guid: 15df8b6cfee6bc64aab0706457bf6122, type: 2}
   m_ParentPrefab: {fileID: 100100000, guid: 15df8b6cfee6bc64aab0706457bf6122, type: 2}
   m_RootGameObject: {fileID: 951516980}
   m_IsPrefabParent: 0

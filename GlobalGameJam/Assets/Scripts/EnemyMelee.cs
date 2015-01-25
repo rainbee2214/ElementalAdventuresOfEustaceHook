@@ -107,9 +107,9 @@ public class EnemyMelee : EnemyBase
 		playerInRange = false;
 		// Create raycasts to see if player is in line of sight
 		hits[0] = Physics2D.Raycast(transform.position, Vector2.right, ViewRange, layerMask);
-//		Debug.DrawRay(transform.position, Vector2.right * ViewRange);
+		Debug.DrawRay(transform.position, Vector2.right * ViewRange);
 		hits[1] = Physics2D.Raycast(transform.position, -Vector2.right, ViewRange, layerMask);
-//		Debug.DrawRay(transform.position, -Vector2.right * ViewRange);
+		Debug.DrawRay(transform.position, -Vector2.right * ViewRange);
 
 		for (int i = 0; i < hits.Length; i++)
 		{
@@ -129,7 +129,7 @@ public class EnemyMelee : EnemyBase
      
 		// Do attack range raycast
 		hits[0] = Physics2D.Raycast(transform.position, currentDirection, AttackRange, layerMask);
-		Debug.DrawRay(transform.position, currentDirection * AttackRange);
+		Debug.DrawRay(transform.position, currentDirection * AttackRange, Color.red);
 		if (hits[0].collider != null)
 		{
 			if (hits[0].collider.CompareTag("Player"))
