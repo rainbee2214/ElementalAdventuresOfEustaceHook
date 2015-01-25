@@ -475,7 +475,7 @@ GameObject:
   - 114: {fileID: 1660221992}
   m_Layer: 0
   m_Name: Hookshot
-  m_TagString: Untagged
+  m_TagString: Hookshot
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -617,6 +617,10 @@ Prefab:
     - target: {fileID: 11469016, guid: 15df8b6cfee6bc64aab0706457bf6122, type: 2}
       propertyPath: currentLength
       value: 12
+      objectReference: {fileID: 0}
+    - target: {fileID: 169012, guid: 15df8b6cfee6bc64aab0706457bf6122, type: 2}
+      propertyPath: m_TagString
+      value: Hookshot
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 15df8b6cfee6bc64aab0706457bf6122, type: 2}

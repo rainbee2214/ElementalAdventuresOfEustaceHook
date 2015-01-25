@@ -4,31 +4,43 @@ using System.Collections.Generic;
 
 public class HookshotController : MonoBehaviour
 {
-    float offset = 1f;
-    GameObject head;
-    GameObject tail;
     public int currentLength = 6;
-
+    float linkLength = 0.5f;
     Animator anim;
     public bool extend;
+    bool attached = false;
+    bool holding = false;
+    float numberOfLinks;
 
     void Awake()
     {
         anim = GetComponent<Animator>();
-        head = Resources.Load("Prefabs/Hookshot/Head", typeof(GameObject)) as GameObject;
-        tail = Resources.Load("Prefabs/Hookshot/Tail", typeof(GameObject)) as GameObject;
     }
 
     void FixedUpdate()
     {
         if (Input.GetButtonDown("Fire3")) extend = true;
-        if (extend) Extend(); 
+        else if (Input.GetButton("Fire3"))
+        {
+
+        }
+        else
+        {
+            attached = false;
+        }
+        if (extend) Extend();
+        if (attached) Attach();
     }
 
     void Extend()
     {
         extend = false;
         ExtendAnimation(currentLength);
+    }
+
+    void Attach()
+    {
+        Debug.Log("ATTACHED!");
     }
 
     void CreateHookshot()
@@ -43,6 +55,15 @@ public class HookshotController : MonoBehaviour
 
     void OnCollisionEnter2D(Collision2D other)
     {
-        Debug.Log(other.gameObject.tag);
+        if (Input.GetButton("Fire3"))
+        {
+            attached = true;
+            Debug.Log("Holding button");
+        }
+        Vector2 point = other.contacts[0].point;
+        float distance = Vector2.Distance(transform.position, point);
+        numberOfLinks = distance / linkLength;
+        //Debug.Log(other.gameObject.tag + " " + point + " Distance between point and player: " + distance + " and number of links: " + (int)links);
+        anim.SetTrigger((int)numberOfLinks + "In");
     }
 }
