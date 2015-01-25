@@ -26,7 +26,7 @@ public class EnemyMelee : EnemyBase
 	GameObject player;
 	Vector2 currentDirection;
 	public Animator anim;
-	CircleCollider2D attackTrigger;
+//	CircleCollider2D attackTrigger;
 
 	void Start()
 	{
@@ -59,9 +59,9 @@ public class EnemyMelee : EnemyBase
 		Weakness = weak;
 
 		// Create attack trigger
-		attackTrigger = gameObject.AddComponent<CircleCollider2D>();
-		attackTrigger.isTrigger = true;
-		attackTrigger.radius = startAttackRange;
+//		attackTrigger = gameObject.AddComponent<CircleCollider2D>();
+//		attackTrigger.isTrigger = true;
+//		attackTrigger.radius = startAttackRange;
 	}
 
 	void FixedUpdate()
@@ -76,13 +76,13 @@ public class EnemyMelee : EnemyBase
 				{
 					anim.SetBool("WalkRight", true);
 					anim.SetBool("WalkLeft", false);
-					attackTrigger.center = new Vector2(2.7f, 0f);
+//					attackTrigger.center = new Vector2(2.7f, 0f);
 				} 
 				else if (currentDirection == -Vector2.right)
 				{
 					anim.SetBool("WalkLeft", true);
 					anim.SetBool("WalkRight", false);
-					attackTrigger.center = new Vector2(0f, 0f);
+//					attackTrigger.center = new Vector2(0f, 0f);
 				}
 				transform.position = Vector3.MoveTowards(transform.position, player.transform.position, Time.deltaTime);
 			}
@@ -106,10 +106,10 @@ public class EnemyMelee : EnemyBase
 
 		playerInRange = false;
 		// Create raycasts to see if player is in line of sight
-		hits[0] = Physics2D.Raycast(new Vector3(transform.position.x, transform.position.y, transform.position.z), Vector2.right, ViewRange, layerMask);
-		Debug.DrawRay(new Vector3(transform.position.x, transform.position.y, transform.position.z), Vector2.right * ViewRange);
-		hits[1] = Physics2D.Raycast(new Vector3(transform.position.x, transform.position.y, transform.position.z), -Vector2.right, ViewRange, layerMask);
-		Debug.DrawRay(new Vector3(transform.position.x, transform.position.y, transform.position.z), -Vector2.right * ViewRange);
+		hits[0] = Physics2D.Raycast(transform.position, Vector2.right, ViewRange, layerMask);
+//		Debug.DrawRay(transform.position, Vector2.right * ViewRange);
+		hits[1] = Physics2D.Raycast(transform.position, -Vector2.right, ViewRange, layerMask);
+//		Debug.DrawRay(transform.position, -Vector2.right * ViewRange);
 
 		for (int i = 0; i < hits.Length; i++)
 		{
@@ -126,6 +126,19 @@ public class EnemyMelee : EnemyBase
 				}
 			}
 		}
+
+		// Do attack range raycast
+		hits[0] = Physics2D.Raycast(transform.position, currentDirection, AttackRange, layerMask);
+		Debug.DrawRay(transform.position, currentDirection * AttackRange);
+		if (hits[0].collider != null)
+		{
+			if (hits[0].collider.CompareTag("Player"))
+			{
+				playerInAttackRange = true;
+			}
+			else playerInAttackRange = false;
+		}
+		else playerInAttackRange = false;
 
 
 	}
