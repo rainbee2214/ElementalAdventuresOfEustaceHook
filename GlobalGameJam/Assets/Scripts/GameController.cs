@@ -43,6 +43,7 @@ public class GameController : MonoBehaviour
 
 	void SetupPlayerStats()
 	{
+		playerStats = new PlayerStats();
 		playerStats.Health = startHealth;
 		playerStats.Strength = startStrength;
 		playerStats.Armor = startArmor;
