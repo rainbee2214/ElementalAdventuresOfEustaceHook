@@ -4,7 +4,6 @@ using System.Collections;
 public class Xp : MonoBehaviour {
 
     Vector2 outOfView = new Vector2(-1000, -1000);
-    public Vector2 playerPosition = new Vector2(0,0);
     public bool isTracking = false;
 
     int amount;
@@ -23,6 +22,7 @@ public class Xp : MonoBehaviour {
 
     void Track()
     {
+        Vector2 playerPosition = GameObject.Find("Player").transform.position;
         transform.position = Vector2.MoveTowards(transform.position, playerPosition, Time.deltaTime);
     }
 
@@ -36,7 +36,9 @@ public class Xp : MonoBehaviour {
     public void TurnXpOn(Vector2 newPosition)
     {
         gameObject.SetActive(true);
-        transform.position = newPosition;
+        newPosition.x += Random.Range(-15.0f, 15.1f);
+        newPosition.y += Random.Range(0f, 5.1f);
+        Debug.Log("new pos: " + newPosition);
         isTracking = true;
     }
 
@@ -46,6 +48,7 @@ public class Xp : MonoBehaviour {
         {
             ResetXp();
             Debug.Log("You have gained Xp.");
+            isTracking = false;
         }
     }
 

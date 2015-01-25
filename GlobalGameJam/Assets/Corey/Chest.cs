@@ -39,12 +39,12 @@ public class Chest : MonoBehaviour {
         for (int i = 0; i < num1; i++)
         {
             //Debug.Log("Generating coins!");
-            createCoin.CreateCoin();
+            createCoin.CreateCoinFromChest(transform.position);
         }
         for (int i = 0; i < num2; i++)
         {
             //Debug.Log("Generating xp!");
-            generateXp.CreateXp();
+            generateXp.CreateXp(transform.position);
         }
     }
 

@@ -5,13 +5,18 @@ using System.Collections.Generic;
 public class GenerateXp : MonoBehaviour {
 
     GameObject xp;
-    public int poolSize = 20;
+    public int poolSize = 10;
     List<GameObject> objectPool;
+    public int current = 0;
 
-    public void CreateXp()
+    public void CreateXp(Vector2 chestPosition)
     {
-        for (int i = 0; i < objectPool.Count; i++)
-            objectPool[i].transform.position = Vector2.zero;
+        objectPool[current].GetComponent<Xp>().TurnXpOn(chestPosition);
+        current++;
+        if(current >= 10)
+        {
+            current = 0;
+        }
     }
 
     void CreatePool()
