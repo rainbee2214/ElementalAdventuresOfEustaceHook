@@ -21,9 +21,6 @@ public class HookshotController : MonoBehaviour
 
     void FixedUpdate()
     {
-        Vector3 mousePos = Camera.main.ScreenToWorldPoint(Input.mousePosition);
-        Vector2 mousePosition = mousePos;
-        Debug.Log(mousePosition);
         if (Input.GetButtonDown("Fire3")) extend = true;
         if (extend) Extend(); 
     }
