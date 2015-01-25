@@ -21,8 +21,10 @@ public class PlayerPhysics : MonoBehaviour
     public float gravityScale = 2f;
     public float jumpSpeed = 1f;
 
+
     void Awake()
     {
+        position = transform.position;
         playerAnimation = GetComponent<PlayerAnimation>();
         jumpDistance += delta;  
     }
@@ -78,10 +80,7 @@ public class PlayerPhysics : MonoBehaviour
             jumpLocation = transform.position;
             jumpLocation.y += jumpDistance;
             jumping = true;
-        }
-        else if (!grounded)
-        {
-            //Debug.Log("Can't jump.");
+            Debug.Log("Jumping");
         }
     }
 

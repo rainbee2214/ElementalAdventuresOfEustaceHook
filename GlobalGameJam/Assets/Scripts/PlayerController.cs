@@ -4,7 +4,10 @@ using System.Collections;
 [RequireComponent(typeof(PlayerPhysics))]
 public class PlayerController : MonoBehaviour
 {
-    PlayerPhysics playerPhysics;
+    [HideInInspector]
+    public PlayerPhysics playerPhysics;
+
+    public bool ableToMove = true;
 
     void Awake()
     {
@@ -13,11 +16,14 @@ public class PlayerController : MonoBehaviour
 
     void FixedUpdate()
     {
-        if (Mathf.Abs(Input.GetAxisRaw("Horizontal")) > 0) playerPhysics.Move(Input.GetAxisRaw("Horizontal"));
-        else playerPhysics.Idle();
+        if (ableToMove)
+        {
+            if (Mathf.Abs(Input.GetAxisRaw("Horizontal")) > 0) playerPhysics.Move(Input.GetAxisRaw("Horizontal"));
+            else playerPhysics.Idle();
 
-        if (Input.GetButtonDown("Jump")) playerPhysics.Jump();
+            if (Input.GetButtonDown("Jump")) playerPhysics.Jump();
 
-        playerPhysics.IsGrounded();
+            playerPhysics.IsGrounded();
+        }
     }
 }

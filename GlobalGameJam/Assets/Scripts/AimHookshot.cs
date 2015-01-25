@@ -6,12 +6,7 @@ public class AimHookshot : MonoBehaviour
     public Vector2 mousePosition = Vector2.zero;
     public float z;
 
-    void Start()
-    {
-
-    }
-
-    void Update()
+    public void AimHookShot()
     {
         mousePosition = Camera.main.ScreenToWorldPoint(Input.mousePosition);
         float x = Vector2.Distance(mousePosition, transform.position);
