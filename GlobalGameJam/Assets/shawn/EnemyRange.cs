@@ -8,6 +8,10 @@ public class EnemyRange : EnemyBase
 	public int startHealth;
 	public int startStrength;
 	public int startAttackValue;
+	public float attackDelay;
+	float nextAttackTime;
+
+	WeaponController weapon;
 	
 	public float startAttackRange, 
 	startViewRange;
@@ -27,10 +31,15 @@ public class EnemyRange : EnemyBase
 	GameObject player;
 	Vector2 currentDirection;
 	public Animator anim;
-	CircleCollider2D attackTrigger;
 	
 	void Start()
 	{
+
+		weapon = GetComponent<WeaponController>();
+
+		currentDirection = Vector2.right;
+		nextAttackTime = Time.time;
+
 		anim = GetComponent<Animator>();
 		// Setup health, strength
 		Health = startHealth;
@@ -59,11 +68,6 @@ public class EnemyRange : EnemyBase
 		} while(weak.type == res.type);
 		weak.value = weaknessMultiplier;
 		Weakness = weak;
-		
-		// Create attack trigger
-		attackTrigger = gameObject.AddComponent<CircleCollider2D>();
-		attackTrigger.isTrigger = true;
-		attackTrigger.radius = startAttackRange;
 	}
 	
 	void FixedUpdate()
@@ -90,9 +94,14 @@ public class EnemyRange : EnemyBase
 			}
 			else
 			{
-				anim.SetBool("WalkRight", false);
-				anim.SetBool("WalkLeft", false);
-				anim.SetTrigger("Attack");
+				if(nextAttackTime < Time.time) 
+				{ 
+					anim.SetBool("WalkRight", false);
+					anim.SetBool("WalkLeft", false);
+					anim.SetTrigger("Attack");
+					FireWeapon();
+					nextAttackTime = Time.time + attackDelay;
+				}
 			}
 		}
 		else
@@ -103,6 +112,12 @@ public class EnemyRange : EnemyBase
 			anim.SetBool("WalkLeft", false);
 		}
 	}
+
+	public void FireWeapon()
+	{
+		weapon.Fire(transform.position, transform.position, currentDirection);
+	}
+
 	
 	public void Move()
 	{
@@ -120,16 +135,29 @@ public class EnemyRange : EnemyBase
 			if (playerInRange) break;
 			if (hits[i].collider != null)
 			{
-				Debug.Log("Something hit" + hits[i].collider.tag);
+//				Debug.Log("Something hit" + hits[i].collider.tag);
 				if (hits[i].collider.CompareTag("Player"))
 				{
 					player = hits[i].collider.gameObject;
 					playerInRange = true;
 					if (i == 0) currentDirection = Vector2.right;
-					else currentDirection = -Vector2.right;
+					else currentDirection = -Vector2.right; 
 				}
 			}
 		}
+
+		// Do attack range raycast
+		hits[0] = Physics2D.Raycast(transform.position, currentDirection, AttackRange, layerMask);
+		Debug.DrawRay(transform.position, currentDirection * AttackRange, Color.red);
+		if (hits[0].collider != null)
+		{
+			if (hits[0].collider.CompareTag("Player"))
+			{
+				playerInAttackRange = true;
+			}
+			else playerInAttackRange = false;
+		}
+		else playerInAttackRange = false;
 		
 		
 	}
@@ -141,24 +169,24 @@ public class EnemyRange : EnemyBase
 		return attack;
 	}
 	
-	void OnTriggerEnter2D(Collider2D other)
-	{
-		if (other.CompareTag("Player"))
-		{
-			playerInAttackRange = true;
-			// Attack!
-			// attackinfo = GetAttack();
-			// player.takeDamage(attackinfo);
-		}
-	}
+//	void OnTriggerEnter2D(Collider2D other)
+//	{
+//		if (other.CompareTag("Player"))
+//		{
+//			playerInAttackRange = true;
+//			// Attack!
+//			// attackinfo = GetAttack();
+//			// player.takeDamage(attackinfo);
+//		}
+//	}
 	
-	void OnTriggerExit2D(Collider2D other)
-	{
-		if (other.CompareTag("Player"))
-		{
-			playerInAttackRange = false;
-		}
-	}
+//	void OnTriggerExit2D(Collider2D other)
+//	{
+//		if (other.CompareTag("Player"))
+//		{
+//			playerInAttackRange = false;
+//		}
+//	}
 	
 	void OnCollisionEnter2D(Collision2D collision)
 	{
