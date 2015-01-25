@@ -31,7 +31,7 @@ public class WeaponController : MonoBehaviour
 //		}
 	}
 
-	void Update () 
+	void FixedUpdate () 
 	{
 		
 	}
