@@ -237,6 +237,7 @@ GameObject:
   - 33: {fileID: 633563445}
   - 65: {fileID: 633563444}
   - 23: {fileID: 633563443}
+  - 114: {fileID: 633563447}
   m_Layer: 0
   m_Name: Chest
   m_TagString: Untagged
@@ -298,6 +299,58 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 5
+--- !u!114 &633563447
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 633563442}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 501a9add560472244974f57fec22aa77, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  ChestOpen: 0
+--- !u!1 &956553385
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  serializedVersion: 4
+  m_Component:
+  - 4: {fileID: 956553387}
+  - 114: {fileID: 956553386}
+  m_Layer: 0
+  m_Name: XpGenerator
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &956553386
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 956553385}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 427b9ca886431c6429e8d1ad4bdf4a46, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  poolSize: 20
+--- !u!4 &956553387
+Transform:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 956553385}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 7
 --- !u!1001 &1136804166
 Prefab:
   m_ObjectHideFlags: 0
@@ -353,6 +406,8 @@ GameObject:
   - 33: {fileID: 1255942492}
   - 135: {fileID: 1255942491}
   - 23: {fileID: 1255942490}
+  - 114: {fileID: 1255942495}
+  - 114: {fileID: 1255942494}
   m_Layer: 0
   m_Name: Xp
   m_TagString: Untagged
@@ -414,6 +469,31 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 6
+--- !u!114 &1255942494
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1255942489}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7fedfb38db2cba747b58a056f9618025, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  playerPosition: {x: 0, y: 0}
+  isTracking: 0
+--- !u!114 &1255942495
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1255942489}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 427b9ca886431c6429e8d1ad4bdf4a46, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  poolSize: 20
 --- !u!1001 &1285193117
 Prefab:
   m_ObjectHideFlags: 0
@@ -472,6 +552,7 @@ GameObject:
   - 114: {fileID: 1539170434}
   - 212: {fileID: 1539170432}
   - 95: {fileID: 1539170431}
+  - 114: {fileID: 1539170436}
   m_Layer: 10
   m_Name: Player
   m_TagString: Player
@@ -581,6 +662,17 @@ MonoBehaviour:
   jumpDistance: 3
   gravityScale: 10
   jumpSpeed: 10
+--- !u!114 &1539170436
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1539170428}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e7e262d2b87c8ad43aee9ca7fc207c64, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1699312964
 GameObject:
   m_ObjectHideFlags: 0
@@ -750,3 +842,43 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 4
+--- !u!1 &2129402899
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  serializedVersion: 4
+  m_Component:
+  - 4: {fileID: 2129402901}
+  - 114: {fileID: 2129402900}
+  m_Layer: 0
+  m_Name: ChestGenerator
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &2129402900
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 2129402899}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: aae9f4ae4f7733841928efd0852af986, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  poolSize: 10
+--- !u!4 &2129402901
+Transform:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 2129402899}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 8
