@@ -8,40 +8,51 @@ public class Chest : MonoBehaviour {
     GenerateCurrency createCoin;
     GenerateXp generateXp;
 
-    void OnTriggerEnter2D(Collider2D other)
+    void OnTriggerStay2D(Collider2D other)
     {
         if (other.tag == "Player")
         {
-            if (!ChestOpen)
+            Debug.Log("Player is touching chest...");
+            if (Input.GetButtonDown("Fire1"))
             {
-                if(Input.GetButtonDown("Fire1"))
-                {
-                    OpenChest();
-                    Debug.Log("Chest opened.");
-                }
+                Debug.Log("Chest opened.");
+                OpenChest();
             }
         }
     }
 
     void OpenChest()
     {
-        int num = 7;
+        int num = Random.Range(0, 10);
+
         int num1 = num % 4;
         int num2 = num / 2;
+
+        if (num2 == 0) num2 = 1;
+        Debug.Log(num1 + " " + num2);
         for (int i = 0; i < num1; i++)
         {
+            //Debug.Log("Generating coins!");
             createCoin.CreateCoin();
         }
         for (int i = 0; i < num2; i++)
         {
+            //Debug.Log("Generating xp!");
             generateXp.CreateXp();
         }
+
+        TurnChestOff();
     }
 
     public void TurnChestOn(Vector2 newPosition)
     {
         gameObject.SetActive(true);
         transform.position = newPosition;
+    }
+
+    public void TurnChestOff()
+    {
+        gameObject.SetActive(false);
     }
 
 
@@ -51,11 +62,8 @@ public class Chest : MonoBehaviour {
         generateXp = GameObject.Find("XpGenerator").GetComponent<GenerateXp>();
     }
     
-    void Update () {
-        if (Input.GetButtonDown("Fire1"))
-        {
-            OpenChest();
-            Debug.Log("Chest opened.");
-        }
+    void Update () 
+    {
+
     }
 }

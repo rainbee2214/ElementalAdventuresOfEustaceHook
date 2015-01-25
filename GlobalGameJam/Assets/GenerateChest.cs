@@ -7,11 +7,21 @@ public class GenerateChest : MonoBehaviour {
     GameObject chest;
     public int poolSize = 10;
     List<GameObject> objectPool;
+    Vector2 startingPosition = new Vector2(-5f, 1f); 
 
-    public void CreateCoin()
+    void Awake()
+    {
+        CreatePool();
+    }
+
+    public void CreateChest()
     {
         for (int i = 0; i < objectPool.Count; i++)
-            objectPool[i].transform.position = Vector2.zero;
+        {
+            objectPool[i].transform.position = startingPosition;
+            startingPosition.x -= 1.5f;
+            objectPool[i].SetActive(true);
+        }
     }
 
     void CreatePool()
@@ -25,22 +35,8 @@ public class GenerateChest : MonoBehaviour {
             objectPool[i].name = "Chest" + i;
             objectPool[i].SetActive(false);
         }
-        for (int i = 0; i < 5; i++)
-        {
-            CreateCoin();
-        }
+        CreateChest();
+
     }
 
-    void Awake()
-    {
-        CreatePool();
-    }
-
-    void Start () {
-    
-    }
-    
-    void Update () {
-    
-    }
 }

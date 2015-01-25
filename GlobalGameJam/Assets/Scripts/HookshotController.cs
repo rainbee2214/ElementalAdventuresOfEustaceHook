@@ -37,7 +37,7 @@ public class HookshotController : MonoBehaviour
     {
         switch (length)
         {
-            case 1: break;
+            case 1: anim.SetTrigger(length);  break;
             case 2: break;
             case 3: break;
             case 4: break;
