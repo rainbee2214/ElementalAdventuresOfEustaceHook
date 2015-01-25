@@ -22,9 +22,11 @@ public class EnemyMelee : EnemyBase
 
 	RaycastHit2D[] hits = new RaycastHit2D[2];
 	bool playerInRange;
+	bool playerInAttackRange = false;
 	GameObject player;
 	Vector2 currentDirection;
 	public Animator anim;
+	CircleCollider2D attackTrigger;
 
 	void Start()
 	{
@@ -57,7 +59,7 @@ public class EnemyMelee : EnemyBase
 		Weakness = weak;
 
 		// Create attack trigger
-		CircleCollider2D attackTrigger = gameObject.AddComponent<CircleCollider2D>();
+		attackTrigger = gameObject.AddComponent<CircleCollider2D>();
 		attackTrigger.isTrigger = true;
 		attackTrigger.radius = startAttackRange;
 	}
@@ -68,17 +70,28 @@ public class EnemyMelee : EnemyBase
 		// If player in sight
 		if (playerInRange)
 		{
-			if (currentDirection == Vector2.right)
+			if (!playerInAttackRange)
 			{
-				anim.SetBool("WalkRight", true);
-				anim.SetBool("WalkLeft", false);
-			} 
-			else if (currentDirection == -Vector2.right)
-			{
-				anim.SetBool("WalkLeft", true);
-				anim.SetBool("WalkRight", false);
+				if (currentDirection == Vector2.right)
+				{
+					anim.SetBool("WalkRight", true);
+					anim.SetBool("WalkLeft", false);
+					attackTrigger.center = new Vector2(2.7f, 0f);
+				} 
+				else if (currentDirection == -Vector2.right)
+				{
+					anim.SetBool("WalkLeft", true);
+					anim.SetBool("WalkRight", false);
+					attackTrigger.center = new Vector2(0f, 0f);
+				}
+				transform.position = Vector3.MoveTowards(transform.position, player.transform.position, Time.deltaTime);
 			}
-			transform.position = Vector3.MoveTowards(transform.position, player.transform.position, Time.deltaTime);
+			else
+			{
+				anim.SetBool("WalkRight", false);
+				anim.SetBool("WalkLeft", false);
+				anim.SetTrigger("Attack");
+			}
 		}
 		else
 		{
@@ -89,12 +102,14 @@ public class EnemyMelee : EnemyBase
 
 	public void Move()
 	{
+		int layerMask = 1 << LayerMask.NameToLayer("Player");
+
 		playerInRange = false;
 		// Create raycasts to see if player is in line of sight
-		hits[0] = Physics2D.Raycast(rightRay.position, Vector2.right, ViewRange);
-		Debug.DrawRay(rightRay.position, Vector2.right * ViewRange);
-		Debug.DrawRay(leftRay.position, -Vector2.right * ViewRange);
-		hits[1] = Physics2D.Raycast(leftRay.position, -Vector2.right, ViewRange);
+		hits[0] = Physics2D.Raycast(new Vector3(transform.position.x, transform.position.y, transform.position.z), Vector2.right, ViewRange, layerMask);
+		Debug.DrawRay(new Vector3(transform.position.x, transform.position.y, transform.position.z), Vector2.right * ViewRange);
+		hits[1] = Physics2D.Raycast(new Vector3(transform.position.x, transform.position.y, transform.position.z), -Vector2.right, ViewRange, layerMask);
+		Debug.DrawRay(new Vector3(transform.position.x, transform.position.y, transform.position.z), -Vector2.right * ViewRange);
 
 		for (int i = 0; i < hits.Length; i++)
 		{
@@ -115,33 +130,42 @@ public class EnemyMelee : EnemyBase
 
 	}
 
-//	public override ElementStat GetAttack()
-//	{
-//		ElementStat attack = base.GetAttack();
-//
-//		return attack;
-//	}
+	public override ElementStat GetAttack()
+	{
+		ElementStat attack = base.GetAttack();
 
-//	void OnTriggerEnter2D(Collider2D other)
-//	{
-//		if (other.CompareTag("Player"))
-//		{
-//			// Attack!
-//				// attackinfo = GetAttack();
-//				// player.takeDamage(attackinfo);
-//		}
-//	}
-//
-//	void OnCollisionEnter2D(Collision2D collision)
-//	{
-//		if (collision.gameObject.tag == "Hookshot")
-//		{
-//			// Get damage from player and fix below
-//			ElementStat attack;
-//			attack.type = ElementType.Fire;
-//			attack.value = 1;
-//			// Above to be replaced from player
-//			TakeDamage(attack);
-//		}
-//	}
+		return attack;
+	}
+
+	void OnTriggerEnter2D(Collider2D other)
+	{
+		if (other.CompareTag("Player"))
+		{
+			playerInAttackRange = true;
+			// Attack!
+				// attackinfo = GetAttack();
+				// player.takeDamage(attackinfo);
+		}
+	}
+
+	void OnTriggerExit2D(Collider2D other)
+	{
+		if (other.CompareTag("Player"))
+		{
+			playerInAttackRange = false;
+		}
+	}
+
+	void OnCollisionEnter2D(Collision2D collision)
+	{
+		if (collision.gameObject.tag == "Hookshot")
+		{
+			// Get damage from player and fix below
+			ElementStat attack;
+			attack.type = ElementType.Fire;
+			attack.value = 1;
+			// Above to be replaced from player
+			TakeDamage(attack);
+		}
+	}
 }
