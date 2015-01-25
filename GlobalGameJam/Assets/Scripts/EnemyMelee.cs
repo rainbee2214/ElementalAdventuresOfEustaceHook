@@ -126,7 +126,7 @@ public class EnemyMelee : EnemyBase
 				}
 			}
 		}
-
+     
 		// Do attack range raycast
 		hits[0] = Physics2D.Raycast(transform.position, currentDirection, AttackRange, layerMask);
 		Debug.DrawRay(transform.position, currentDirection * AttackRange);
