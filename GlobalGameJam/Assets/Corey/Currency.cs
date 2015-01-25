@@ -28,14 +28,13 @@ public class Currency : MonoBehaviour
 
     public void ResetCoin()
     {
-        gameObject.SetActive(false);
+        gameObject.transform.parent.gameObject.SetActive(false);
         transform.position = outOfView;
     }
 
     public void TurnCoinOn(Vector2 newPosition)
     {
-        Debug.Log("Coin made.");
-        gameObject.SetActive(true);
+        gameObject.transform.parent.gameObject.SetActive(true);
         transform.position = newPosition;
     }
 
