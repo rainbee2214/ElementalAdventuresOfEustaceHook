@@ -14,13 +14,13 @@ TextureImporter:
     21300018: RangedEnemy_Sprites_9
     21300020: RangedEnemy_Sprites_10
     21300022: RangedEnemy_Sprites_11
-    21300024: RangedEnemy_Sprites_27
-    21300026: RangedEnemy_Sprites_28
-    21300028: RangedEnemy_Sprites_29
-    21300030: RangedEnemy_Sprites_30
-    21300032: RangedEnemy_Sprites_31
-    21300034: RangedEnemy_Sprites_32
-    21300036: RangedEnemy_Sprites_18
+    21300024: FireballStart1
+    21300026: FireballStart2
+    21300028: FireballTravel1
+    21300030: FireballTravel2
+    21300032: FireballExplosion1
+    21300034: FireballExplosion2
+    21300036: FireballExplosion3
   serializedVersion: 2
   mipmaps:
     mipMapMode: 0
@@ -122,7 +122,7 @@ TextureImporter:
       alignment: 0
       pivot: {x: .5, y: .5}
       border: {x: 0, y: 0, z: 0, w: 0}
-    - name: RangedEnemy_Sprites_27
+    - name: FireballStart1
       rect:
         serializedVersion: 2
         x: 11
@@ -132,7 +132,7 @@ TextureImporter:
       alignment: 0
       pivot: {x: .5, y: .5}
       border: {x: 0, y: 0, z: 0, w: 0}
-    - name: RangedEnemy_Sprites_28
+    - name: FireballStart2
       rect:
         serializedVersion: 2
         x: 26
@@ -142,7 +142,7 @@ TextureImporter:
       alignment: 0
       pivot: {x: .5, y: .5}
       border: {x: 0, y: 0, z: 0, w: 0}
-    - name: RangedEnemy_Sprites_29
+    - name: FireballTravel1
       rect:
         serializedVersion: 2
         x: 55
@@ -152,7 +152,7 @@ TextureImporter:
       alignment: 0
       pivot: {x: .5, y: .5}
       border: {x: 0, y: 0, z: 0, w: 0}
-    - name: RangedEnemy_Sprites_30
+    - name: FireballTravel2
       rect:
         serializedVersion: 2
         x: 92
@@ -162,7 +162,7 @@ TextureImporter:
       alignment: 0
       pivot: {x: .5, y: .5}
       border: {x: 0, y: 0, z: 0, w: 0}
-    - name: RangedEnemy_Sprites_31
+    - name: FireballExplosion1
       rect:
         serializedVersion: 2
         x: 129
@@ -172,7 +172,7 @@ TextureImporter:
       alignment: 0
       pivot: {x: .5, y: .5}
       border: {x: 0, y: 0, z: 0, w: 0}
-    - name: RangedEnemy_Sprites_32
+    - name: FireballExplosion2
       rect:
         serializedVersion: 2
         x: 155
@@ -182,7 +182,7 @@ TextureImporter:
       alignment: 0
       pivot: {x: .5, y: .5}
       border: {x: 0, y: 0, z: 0, w: 0}
-    - name: RangedEnemy_Sprites_18
+    - name: FireballExplosion3
       rect:
         serializedVersion: 2
         x: 176
