@@ -1,7 +1,20 @@
 fileFormatVersion: 2
 guid: b10c93993f5b0452e883fd20c5b8906b
 TextureImporter:
-  fileIDToRecycleName: {}
+  fileIDToRecycleName:
+    21300000: LevelDesign_0
+    21300002: LevelDesign_1
+    21300004: LevelDesign_2
+    21300006: LevelDesign_3
+    21300008: Ground2
+    21300010: LevelDesign_5
+    21300012: LevelDesign_6
+    21300014: Ground
+    21300016: LevelDesign_8
+    21300018: LevelDesign_9
+    21300020: LevelDesign_10
+    21300022: LevelDesign_11
+    21300024: LevelDesign_12
   serializedVersion: 2
   mipmaps:
     mipMapMode: 0
@@ -31,7 +44,7 @@ TextureImporter:
   nPOTScale: 0
   lightmap: 0
   compressionQuality: 50
-  spriteMode: 1
+  spriteMode: 2
   spriteExtrude: 1
   spriteMeshType: 1
   alignment: 0
@@ -42,6 +55,136 @@ TextureImporter:
   textureType: 8
   buildTargetSettings: []
   spriteSheet:
-    sprites: []
+    sprites:
+    - name: LevelDesign_0
+      rect:
+        serializedVersion: 2
+        x: 920
+        y: 1167
+        width: 34
+        height: 34
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: LevelDesign_1
+      rect:
+        serializedVersion: 2
+        x: 1040
+        y: 1167
+        width: 34
+        height: 34
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: LevelDesign_2
+      rect:
+        serializedVersion: 2
+        x: 1760
+        y: 1137
+        width: 34
+        height: 34
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: LevelDesign_3
+      rect:
+        serializedVersion: 2
+        x: 920
+        y: 867
+        width: 242
+        height: 214
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: Ground2
+      rect:
+        serializedVersion: 2
+        x: 1219
+        y: 987
+        width: 327
+        height: 33
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: LevelDesign_5
+      rect:
+        serializedVersion: 2
+        x: 1790
+        y: 1047
+        width: 124
+        height: 34
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: LevelDesign_6
+      rect:
+        serializedVersion: 2
+        x: 2000
+        y: 1017
+        width: 34
+        height: 34
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: Ground
+      rect:
+        serializedVersion: 2
+        x: 1190
+        y: 867
+        width: 244
+        height: 34
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: LevelDesign_8
+      rect:
+        serializedVersion: 2
+        x: 1490
+        y: 837
+        width: 34
+        height: 94
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: LevelDesign_9
+      rect:
+        serializedVersion: 2
+        x: 1580
+        y: 837
+        width: 122
+        height: 34
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: LevelDesign_10
+      rect:
+        serializedVersion: 2
+        x: 1341
+        y: 777
+        width: 123
+        height: 34
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: LevelDesign_11
+      rect:
+        serializedVersion: 2
+        x: 1730
+        y: 747
+        width: 32
+        height: 34
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: LevelDesign_12
+      rect:
+        serializedVersion: 2
+        x: 1820
+        y: 717
+        width: 32
+        height: 34
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
   spritePackingTag: 
   userData: 
