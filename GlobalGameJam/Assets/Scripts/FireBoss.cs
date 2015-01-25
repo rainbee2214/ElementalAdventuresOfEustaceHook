@@ -3,6 +3,10 @@ using System.Collections;
 
 public class FireBoss : EnemyBase 
 {
+	[Header("Attack Information")]
+	public float attackDelay = 5f;
+	float nextAttackTime;
+
 	[Header("Initial Values")]
 	public int startHealth;
 	public int startStrength;
@@ -15,6 +19,9 @@ public class FireBoss : EnemyBase
 	public float resistanceMultiplier;
 	[Range(1.0f, 2.0f)]
 	public float weaknessMultiplier;
+
+	[Header("Fireball Child")]
+	public Transform fireballLocation;
 
 
 	// Raycasts to avoid a million objects
@@ -40,6 +47,8 @@ public class FireBoss : EnemyBase
 
 		// Get animator
 		anim = gameObject.GetComponent<Animator>();
+
+		nextAttackTime = Time.time;
 	}
 
 	void FixedUpdate()
@@ -59,7 +68,8 @@ public class FireBoss : EnemyBase
 			}
 			else // Else the player is in attack range
 			{
-				Attack();
+//				Debug.Log("Next Attack Time: " + nextAttackTime + "  Current Time: " + Time.time);
+				if (Time.time >= nextAttackTime) Attack();
 			}
 		}
 		else // Else player isn't in line of sight, patrol area
@@ -123,6 +133,9 @@ public class FireBoss : EnemyBase
 
 	void Attack()
 	{
+		// Set next attack time
+		nextAttackTime = Time.time + attackDelay;
+
 		// Stop walking
 		anim.SetBool("WalkRight", false);
 		anim.SetBool("WalkLeft", false);
@@ -140,6 +153,13 @@ public class FireBoss : EnemyBase
 
 		// Start animation
 		anim.SetTrigger("Attack");
+
+		// Instantiate Fireball
+		GameObject fireball;
+		fireball = Instantiate(Resources.Load("Prefabs/Fireball", typeof(GameObject)), fireballLocation.position, transform.rotation) as GameObject;
+//		fireball.transform.parent = transform;
+		fireball.GetComponent<FireballTravel>().direction = (currentDirection == Vector2.right) 
+																? 1 : -1;
 	}
 
 	void SetWalkDirection()
