@@ -20,6 +20,21 @@ public class GenerateCurrency : MonoBehaviour
             counter = startCounter;
     }
 
+    public void CreateCoinFromChest(Vector2 chestPosition)
+    {
+        chestPosition.x += Random.Range(-4.0f, 4.1f);
+        chestPosition.y += Random.Range(0f, 1.1f);
+        if (chestPosition.x < 1.0 && chestPosition.x > -1.0)
+        {
+            chestPosition.x += 2.0f;
+        }
+        objectPool[counter].transform.position = chestPosition;
+        objectPool[counter].SetActive(true);
+        counter++;
+        if (counter >= objectPool.Count)
+            counter = startCounter;
+    }
+
     void Awake()
     {
         CreatePool();
