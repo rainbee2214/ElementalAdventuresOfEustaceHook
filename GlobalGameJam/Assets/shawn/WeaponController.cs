@@ -43,15 +43,15 @@ public class WeaponController : MonoBehaviour
 		Animator weaponAnimator = weapons[weaponIndex].gameObject.GetComponent<Animator>();
 		if(direction == Vector2.right) 
 		{
-//			weaponAnimator.SetBool("FireRight", true);
-//			weaponAnimator.SetBool("FireLeft", false);
+			weaponAnimator.SetBool("FireRight", true);
+			weaponAnimator.SetBool("FireLeft", false);
 			Debug.Log ("firing right");
 		}
 		else
 		{
 			Debug.Log ("firing left");
-//			weaponAnimator.SetBool("FireRight", false);
-//			weaponAnimator.SetBool("FireLeft", true);
+			weaponAnimator.SetBool("FireRight", false);
+			weaponAnimator.SetBool("FireLeft", true);
 		}
 		weapons [weaponIndex].transform.position = initialPosition;
 		weapons [weaponIndex].SetActive (true);
