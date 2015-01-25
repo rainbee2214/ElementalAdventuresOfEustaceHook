@@ -4,7 +4,7 @@ using System.Collections.Generic;
 
 public class GenerateCurrency : MonoBehaviour 
 {
-    Vector2 startPosition = new Vector2(5f, 2f);
+    Vector2 startPosition = new Vector2(5f, 1f);
     static int startCounter = 5;
     GameObject coin;
     public int poolSize = 10;
@@ -42,7 +42,7 @@ public class GenerateCurrency : MonoBehaviour
 
     void CreatePool()
     {
-        coin = Resources.Load("Prefabs/Coin", typeof(GameObject)) as GameObject;
+        coin = Resources.Load("Prefabs/Coin2", typeof(GameObject)) as GameObject;
         objectPool = new List<GameObject>();
         for (int i = 0; i < poolSize; i++)
         {
@@ -53,8 +53,9 @@ public class GenerateCurrency : MonoBehaviour
         }
         for (int i = 0; i < 5; i++)
         {
-            CreateCoin();
             startPosition.x += -1.5f;
+            CreateCoin();
+            
         }
     }
 

@@ -18,7 +18,7 @@ public class Chest : MonoBehaviour {
             {
                 if (Input.GetButtonDown("Fire1"))
                 {
-                    Debug.Log("Chest opened.");
+                    //Debug.Log("Chest opened.");
                     ChestOpen = true;
                     OpenChest();
                     anim.SetTrigger("OpenChest");

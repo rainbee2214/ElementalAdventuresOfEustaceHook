@@ -42,7 +42,6 @@ public class Xp : MonoBehaviour {
             newPosition.x += 12.0f;
         transform.position = new Vector2(newPosition.x, newPosition.y);
         gameObject.SetActive(true);
-        Debug.Log("new pos: " + newPosition);
         isTracking = true;
     }
 
@@ -51,7 +50,6 @@ public class Xp : MonoBehaviour {
         if (other.tag == "Player")
         {
             ResetXp();
-            Debug.Log("You have gained Xp.");
             isTracking = false;
         }
     }
