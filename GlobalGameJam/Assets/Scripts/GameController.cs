@@ -9,6 +9,7 @@ public class GameController : MonoBehaviour
 
 	public PlayerStats playerStats;
     public static GameObject player;
+    public MasterPool masterPool;
 
 	[Header("Player's Starting Stats")]
 	public int startHealth;
@@ -32,6 +33,7 @@ public class GameController : MonoBehaviour
             Destroy(gameObject);
         }
         player = GameObject.Find("Player");
+        masterPool = GetComponent<MasterPool>();
     }
 
     void Start()

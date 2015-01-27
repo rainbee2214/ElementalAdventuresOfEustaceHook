@@ -4,10 +4,9 @@ using System.Collections.Generic;
 
 public class MasterPool : MonoBehaviour
 {
-    string[] objects = new string[3]
+    string[] objects = new string[4]
     {
-        //"Heart", 
-        "Xp", "Currency", "Chest"
+        "Heart", "Xp", "Currency", "Chest"
     };
 
     public int[] sizes = new int[4]
@@ -17,7 +16,19 @@ public class MasterPool : MonoBehaviour
     List<List<GameObject>> pools;
     List<GameObject> poolOrganizers;
 
-    void Start()
+    public void GetPool(ref List<GameObject> pool, string name)
+    {
+        if (pool == null) pool = new List<GameObject>();
+        switch (name)
+        {
+            case "Heart": pool = pools[0]; break;
+            case "Xp": pool = pools[1]; break;
+            case "Currency": pool = pools[2]; break;
+            case "Chest": pool = pools[3]; break;
+            default: break;
+        }
+    }
+    void Awake()
     {
         CreatePools();
     }
