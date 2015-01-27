@@ -2,7 +2,7 @@
 using System.Collections;
 using System.Collections.Generic;
 
-public enum ElementType
+public enum Element
 {
 	Fire,
 	Water,
@@ -14,7 +14,7 @@ public enum ElementType
 /// </summary>
 public struct ElementStat 
 {
-	public ElementType type;
+	public Element type;
 	public int value;
 }
 
@@ -23,7 +23,7 @@ public struct ElementStat
 /// </summary>
 public struct BuffStat
 {
-	public ElementType type;
+	public Element type;
 	public float value;
 }
 

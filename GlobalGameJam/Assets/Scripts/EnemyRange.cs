@@ -51,20 +51,20 @@ public class EnemyRange : EnemyBase
 		
 		// Setup elemental & attack values
 		ElementStat setup;
-		setup.type = ElementType.Fire;
+		setup.type = Element.Fire;
 		setup.value = startAttackValue;
 		ElementAttack = setup;
 		
 		// Setup resistance & weakness, ensure weakness is not the same as resistance
 		BuffStat res;
-		res.type = Utility.GetRandomEnum<ElementType>();
+		res.type = Utility.GetRandomEnum<Element>();
 		res.value = resistanceMultiplier;
 		Resistance = res;
 		
 		BuffStat weak;
 		do
 		{
-			weak.type = Utility.GetRandomEnum<ElementType>();
+			weak.type = Utility.GetRandomEnum<Element>();
 		} while(weak.type == res.type);
 		weak.value = weaknessMultiplier;
 		Weakness = weak;
@@ -194,7 +194,7 @@ public class EnemyRange : EnemyBase
 		{
 			// Get damage from player and fix below
 			ElementStat attack;
-			attack.type = ElementType.Fire;
+			attack.type = Element.Fire;
 			attack.value = 1;
 			// Above to be replaced from player
 			TakeDamage(attack);

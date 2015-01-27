@@ -4,14 +4,15 @@ using System.Collections.Generic;
 
 public class MasterPool : MonoBehaviour
 {
-    string[] objects = new string[4]
+    const int numberOfPools = 5;
+    string[] objects = new string[numberOfPools]
     {
-        "Heart", "Xp", "Currency", "Chest"
+        "Heart", "Xp", "Currency", "Chest", "Fireball"
     };
 
-    public int[] sizes = new int[4]
+    public int[] sizes = new int[numberOfPools]
     {
-        10, 10, 10, 10
+        10, 10, 10, 10, 10
     };
     List<List<GameObject>> pools;
     List<GameObject> poolOrganizers;
@@ -25,6 +26,7 @@ public class MasterPool : MonoBehaviour
             case "Xp": pool = pools[1]; break;
             case "Currency": pool = pools[2]; break;
             case "Chest": pool = pools[3]; break;
+            case "Fireball": pool = pools[4]; break;
             default: break;
         }
     }

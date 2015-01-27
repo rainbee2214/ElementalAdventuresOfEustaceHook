@@ -1,7 +1,7 @@
 ﻿using UnityEngine;
 using System.Collections;
 
-public class RangeEnemyAnimation : MonoBehaviour {
+public class EnemyAnimation : MonoBehaviour {
 
 	Animator anim;
 	

@@ -8,12 +8,12 @@ public class Currency : Collectable
     #endregion
 
     #region Private
-    ElementType element;
+    Element element;
     int amount;
     Color currentColor;
 
     #region Properties
-    public ElementType Element
+    public Element Element
     {
         get { return element; }
         set { element = value; }

@@ -9,18 +9,18 @@ public class BossController : MonoBehaviour
 	WaterBoss waterBoss;
 	MagicBoss magicBoss;
 	
-	public void removeMainBossResistance(ElementType toRemove)
+	public void RemoveResistance(Element toRemove)
 	{
 		switch(toRemove)
 		{
-		case ElementType.Fire:
-			//boss.removeResistance(ElementType.Fire);
+		case Element.Fire:
+			//boss.removeResistance(Element.Fire);
 			break;
-		case ElementType.Magic:
-			//boss.removeResistance(ElementType.Magic);
+		case Element.Magic:
+			//boss.removeResistance(Element.Magic);
 			break;
-		case ElementType.Water:
-			//boss.removeResistance(ElementType.Water);
+		case Element.Water:
+			//boss.removeResistance(Element.Water);
 			break;
 		}
 	}	

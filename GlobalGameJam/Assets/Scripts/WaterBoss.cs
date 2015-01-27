@@ -4,9 +4,9 @@ using System.Collections;
 public class WaterBoss : EnemyBase 
 {
 	[Header("Initial Values")]
-	public int startHealth,
-			   startStrength,
-			   startAttackValue;
+	public int startHealth;
+    public int startStrength;
+    public int startAttackValue;
 	
 	public float startAttackRange, 
 				 startViewRange;
@@ -28,24 +28,24 @@ public class WaterBoss : EnemyBase
 		
 		// Setup elemental & attack values
 		ElementStat setup;
-		setup.type = ElementType.Water;
+		setup.type = Element.Water;
 		setup.value = startAttackValue;
 		ElementAttack = setup;
 
 		// Setup resistance & weakness
 		BuffStat res;
-		res.type = ElementType.Water;
+		res.type = Element.Water;
 		res.value = resistanceMultiplier;
 		Resistance = res;
 		
 		BuffStat weak;
-		weak.type = ElementType.Magic;
+		weak.type = Element.Magic;
 		weak.value = weaknessMultiplier;
 		Weakness = weak;
 	}
 
 	void Die()
 	{
-		GameController.controller.bossController.removeMainBossResistance(ElementAttack.type);
+        GameController.controller.bossController.RemoveResistance(ElementAttack.type);
 	}
 }

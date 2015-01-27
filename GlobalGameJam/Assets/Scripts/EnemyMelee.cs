@@ -44,20 +44,20 @@ public class EnemyMelee : EnemyBase
 		
 		// Setup elemental & attack values
 		ElementStat setup;
-		setup.type = ElementType.Fire;
+		setup.type = Element.Fire;
 		setup.value = startAttackValue;
 		ElementAttack = setup;
 		
 		// Setup resistance & weakness, ensure weakness is not the same as resistance
 		BuffStat res;
-        res.type = ElementType.Magic;//Utility.GetRandomEnum<ElementType>();
+        res.type = Element.Magic;//Utility.GetRandomEnum<Element>();
 		res.value = resistanceMultiplier;
 		Resistance = res;
 		
 		BuffStat weak;
 		do
 		{
-			weak.type = Utility.GetRandomEnum<ElementType>();
+			weak.type = Utility.GetRandomEnum<Element>();
 		} while(weak.type == res.type);
 		weak.value = weaknessMultiplier;
 		Weakness = weak;
@@ -184,7 +184,7 @@ public class EnemyMelee : EnemyBase
 		if (collision.gameObject.tag == "Player")
 		{
             ElementStat attack;
-            attack.type = ElementType.Fire;
+            attack.type = Element.Fire;
             attack.value = 1;
             TakeDamage(attack);
             Debug.Log(Health);

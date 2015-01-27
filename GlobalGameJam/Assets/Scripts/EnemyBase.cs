@@ -63,17 +63,17 @@ public class EnemyBase : MonoBehaviour
 		float finalDamage = damage.value;
 		switch(damage.type)
 		{
-		case ElementType.Fire:
-			if (resistance.type == ElementType.Fire) finalDamage *= resistance.value;
-			if (weakness.type == ElementType.Fire) finalDamage *= weakness.value;
+		case Element.Fire:
+			if (resistance.type == Element.Fire) finalDamage *= resistance.value;
+			if (weakness.type == Element.Fire) finalDamage *= weakness.value;
 			break;
-		case ElementType.Water:
-			if (resistance.type == ElementType.Water) finalDamage *= resistance.value;
-			if (weakness.type == ElementType.Water) finalDamage *= weakness.value;
+		case Element.Water:
+			if (resistance.type == Element.Water) finalDamage *= resistance.value;
+			if (weakness.type == Element.Water) finalDamage *= weakness.value;
 			break;
-		case ElementType.Magic:
-			if (resistance.type == ElementType.Magic) finalDamage *= resistance.value;
-			if (weakness.type == ElementType.Magic) finalDamage *= weakness.value;
+		case Element.Magic:
+			if (resistance.type == Element.Magic) finalDamage *= resistance.value;
+			if (weakness.type == Element.Magic) finalDamage *= weakness.value;
 			break;
 		}
 

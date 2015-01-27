@@ -1,9 +1,10 @@
 ﻿using UnityEngine;
 using System.Collections;
 
-public class FireBoss : EnemyBase 
+public class FireBoss : EnemyBase
 {
-	[Header("Attack Information")]
+    #region Public
+    [Header("Attack Information")]
 	public float attackDelay = 5f;
 	float nextAttackTime;
 
@@ -22,23 +23,16 @@ public class FireBoss : EnemyBase
 
 	[Header("Fireball Child")]
 	public Transform fireballLocation;
-
-
-	// Raycasts to avoid a million objects
+    #endregion
+    #region Private
 	RaycastHit2D[] hits = new RaycastHit2D[2];
-
-	// Booleans for player in range
 	bool playerInRange = false;
 	bool playerInAttackRange = false;
-
-	// player reference
 	GameObject player;
-
-	// current direction
 	Vector2 currentDirection;
-
-	// animator
 	Animator anim;
+    #endregion
+
 	
 	void Start () 
 	{
@@ -158,7 +152,7 @@ public class FireBoss : EnemyBase
 		GameObject fireball;
 		fireball = Instantiate(Resources.Load("Prefabs/Fireball", typeof(GameObject)), fireballLocation.position, transform.rotation) as GameObject;
 //		fireball.transform.parent = transform;
-		fireball.GetComponent<FireballTravel>().direction = (currentDirection == Vector2.right) 
+		fireball.GetComponent<Fireball>().direction = (currentDirection == Vector2.right) 
 																? 1 : -1;
 	}
 
@@ -189,24 +183,24 @@ public class FireBoss : EnemyBase
 		
 		// Setup elemental & attack values
 		ElementStat setup;
-		setup.type = ElementType.Fire;
+		setup.type = Element.Fire;
 		setup.value = startAttackValue;
 		ElementAttack = setup;
 		
 		// Setup resistance & weakness
 		BuffStat res;
-		res.type = ElementType.Fire;
+		res.type = Element.Fire;
 		res.value = resistanceMultiplier;
 		Resistance = res;
 		
 		BuffStat weak;
-		weak.type = ElementType.Water;
+		weak.type = Element.Water;
 		weak.value = weaknessMultiplier;
 		Weakness = weak;
 	}
 
 	void Die()
 	{
-		GameController.controller.bossController.removeMainBossResistance(ElementAttack.type);
+        GameController.controller.bossController.RemoveResistance(ElementAttack.type);
 	}
 }

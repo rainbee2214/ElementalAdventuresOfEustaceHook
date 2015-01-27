@@ -1,8 +1,11 @@
 ﻿using UnityEngine;
 using System.Collections;
 
-public class MagicBoss : EnemyBase 
+[RequireComponent(typeof(FireballController))]
+public class MagicBoss : EnemyBase
 {
+    #region Public
+    public Vector2 offset = new Vector2(-0.6f, 0.3f);
 	[Header("Initial Values")]
 	public int startHealth,
 			   startStrength,
@@ -15,37 +18,72 @@ public class MagicBoss : EnemyBase
 	public float resistanceMultiplier;
 	[Range(1.0f, 2.0f)]
 	public float weaknessMultiplier;
-	
-	void Start () 
-	{
-		// Setup health, strength
-		Health = startHealth;
-		Strength = startStrength;
-		
-		// Setup view range
-		AttackRange = startAttackRange;
-		ViewRange = startViewRange;
-		
-		// Setup elemental & attack values
-		ElementStat setup;
-		setup.type = ElementType.Magic;
-		setup.value = startAttackValue;
-		ElementAttack = setup;
 
-		// Setup resistance & weakness
-		BuffStat res;
-		res.type = ElementType.Magic;
-		res.value = resistanceMultiplier;
-		Resistance = res;
-		
-		BuffStat weak;
-		weak.type = ElementType.Fire;
-		weak.value = weaknessMultiplier;
-		Weakness = weak;
-	}
+    public bool fire;
+    #endregion
+    #region Private
+    FireballController fireballs;
+    Animator anim;
+    #endregion
+
+    void Awake()
+    {
+        anim = GetComponent<Animator>();
+        fireballs = GetComponent<FireballController>();
+        Setup();
+    }
+
+    public void Move()
+    {
+
+    }
+
+    void FixedUpdate()
+    {
+        Move();
+        if (fire) Fire();
+        if (Health <= 0) Die();
+    }
+
+    public void Fire()
+    {
+        anim.SetTrigger("Attack");
+        fire = false;
+        Vector2 firePosition = new Vector2(transform.position.x + offset.x, transform.position.y + offset.y);
+        fireballs.Fire(firePosition);
+    }
 
 	void Die()
 	{
-		GameController.controller.bossController.removeMainBossResistance(ElementAttack.type);
+        gameObject.SetActive(false);
+        GameController.controller.bossController.RemoveResistance(ElementAttack.type);
 	}
+
+    void Setup()
+    {
+        // Setup health, strength
+        Health = startHealth;
+        Strength = startStrength;
+
+        // Setup view range
+        AttackRange = startAttackRange;
+        ViewRange = startViewRange;
+
+        // Setup elemental & attack values
+        ElementStat setup;
+        setup.type = Element.Magic;
+        setup.value = startAttackValue;
+        ElementAttack = setup;
+
+        // Setup resistance & weakness
+        BuffStat res;
+        res.type = Element.Magic;
+        res.value = resistanceMultiplier;
+        Resistance = res;
+
+        BuffStat weak;
+        weak.type = Element.Fire;
+        weak.value = weaknessMultiplier;
+        Weakness = weak;
+    }
 }

@@ -3,6 +3,7 @@ using System.Collections;
 
 public class GameController : MonoBehaviour
 {
+    #region Public
     public static GameController controller;
 
 	public BossController bossController;
@@ -20,6 +21,7 @@ public class GameController : MonoBehaviour
 	public int startMagicStat;
 
     public bool dead;
+    #endregion
 
     void Awake()
     {
@@ -59,15 +61,15 @@ public class GameController : MonoBehaviour
 		playerStats.Armor = startArmor;
 
 		ElementStat genericStat;
-		genericStat.type = ElementType.Fire;
+		genericStat.type = Element.Fire;
 		genericStat.value = startFireStat;
 		playerStats.FireStat = genericStat;
 
-		genericStat.type = ElementType.Water;
+		genericStat.type = Element.Water;
 		genericStat.value = startWaterStat;
 		playerStats.WaterStat = genericStat;
 
-		genericStat.type = ElementType.Magic;
+		genericStat.type = Element.Magic;
 		genericStat.value = startMagicStat;
 		playerStats.MagicStat = genericStat;
 	}
