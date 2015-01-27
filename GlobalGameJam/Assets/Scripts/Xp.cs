@@ -3,46 +3,61 @@ using System.Collections;
 
 public class Xp : Collectable
 {
-
-    Vector2 outOfView = new Vector2(-1000, -1000);
-    public bool isTracking = false;
+    #region Public
+    bool isTracking = false;
     public float speed = 8.5f;
+    #endregion
 
+    #region Private
     int amount;
+    Color currentColor;
+    GameObject player;
+    Vector2 targetPosition;
+    #region
     public int Amount
     {
         get { return amount; }
         set { amount += value; }
     }
 
-    Color currentColor;
     public Color CurrentColor
     {
         get { return currentColor; }
         set { currentColor = value; }
     }
+    #endregion
+    #endregion
+
+    void Start()
+    {
+        player = GameController.player;
+    }
+
+    void FixedUpdate()
+    {
+        if (isTracking)
+        {
+            Track();
+        }
+    }
 
     void Track()
     {
-        Vector2 playerPosition = GameObject.Find("Player").transform.position;
-        transform.position = Vector2.MoveTowards(transform.position, playerPosition, Time.deltaTime * speed);
+        targetPosition = player.transform.position;
+        transform.position = Vector2.MoveTowards(transform.position, targetPosition, Time.deltaTime * speed);
     }
 
-    public void ResetXp()
+    public override void Reset()
     {
-        gameObject.SetActive(false);
-        transform.position = outOfView;
         isTracking = false;
     }
 
-    public void TurnXpOn(Vector2 newPosition)
+    public override void TurnOn(Vector2 newPosition)
     {
         newPosition.x += Random.Range(-16.0f, 16.1f);
         newPosition.y += Random.Range(0f, 5.1f);
         if (newPosition.x < 5.0f && newPosition.x > -5.0f)
             newPosition.x += 12.0f;
-        transform.position = new Vector2(newPosition.x, newPosition.y);
-        gameObject.SetActive(true);
         isTracking = true;
     }
 
@@ -50,21 +65,8 @@ public class Xp : Collectable
     {
         if (other.tag == "Player")
         {
-            ResetXp();
-            isTracking = false;
+            Reset();
         }
     }
 
-    void Start () 
-    {
-    
-    }
-    
-    void Update () 
-    {
-        if (isTracking)
-        {
-            Track();
-        }
-    }
 }

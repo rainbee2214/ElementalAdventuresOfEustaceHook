@@ -8,6 +8,7 @@ public class GameController : MonoBehaviour
 	public BossController bossController;
 
 	public PlayerStats playerStats;
+    public static GameObject player;
 
 	[Header("Player's Starting Stats")]
 	public int startHealth;
@@ -30,6 +31,7 @@ public class GameController : MonoBehaviour
         {
             Destroy(gameObject);
         }
+        player = GameObject.Find("Player");
     }
 
     void Start()
