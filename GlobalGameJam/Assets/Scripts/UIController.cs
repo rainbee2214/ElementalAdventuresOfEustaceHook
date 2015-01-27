@@ -7,6 +7,8 @@ public class UIController : MonoBehaviour
 {
     public Text healthText;
     public Image heart;
+    public Image xp;
+
     List<Image> hearts;
     float screenWidth;
     float screenHeight;
@@ -35,6 +37,7 @@ public class UIController : MonoBehaviour
         screenWidth = Screen.width;
         screenHeight = Screen.height;
         healthText.rectTransform.position = new Vector3(screenWidth / 2f, screenHeight - screenHeight / 10f, 0);
+        xp.rectTransform.position = new Vector3(screenWidth - (screenWidth / 10f), screenHeight - screenHeight / 10f, 0);
         Vector3 position = new Vector3(screenWidth / 12f, screenHeight - screenHeight / 12f, 0);
         for (int i = 0; i < 10; i++)
         {

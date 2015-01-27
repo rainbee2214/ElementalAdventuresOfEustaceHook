@@ -81,7 +81,6 @@ public class PlayerPhysics : MonoBehaviour
             jumpLocation = transform.position;
             jumpLocation.y += jumpDistance;
             jumping = true;
-            Debug.Log("Jumping " + jumpLocation);
         }
     }
 
