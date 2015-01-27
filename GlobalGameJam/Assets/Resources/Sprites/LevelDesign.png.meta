@@ -16,6 +16,7 @@ TextureImporter:
     21300022: LevelDesign_11
     21300024: LevelDesign_12
     21300026: Wall
+    21300028: LevelDesign_14
   serializedVersion: 2
   mipmaps:
     mipMapMode: 0
@@ -192,8 +193,18 @@ TextureImporter:
         serializedVersion: 2
         x: 734
         y: 581
-        width: 183
+        width: 160
         height: 963
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: LevelDesign_14
+      rect:
+        serializedVersion: 2
+        x: 102
+        y: 830
+        width: 75
+        height: 13
       alignment: 0
       pivot: {x: .5, y: .5}
       border: {x: 0, y: 0, z: 0, w: 0}

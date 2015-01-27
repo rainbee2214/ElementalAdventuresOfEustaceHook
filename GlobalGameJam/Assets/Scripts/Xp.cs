@@ -1,7 +1,8 @@
 ﻿using UnityEngine;
 using System.Collections;
 
-public class Xp : MonoBehaviour {
+public class Xp : Collectable
+{
 
     Vector2 outOfView = new Vector2(-1000, -1000);
     public bool isTracking = false;

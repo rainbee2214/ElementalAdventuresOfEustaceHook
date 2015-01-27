@@ -44,7 +44,7 @@ public class GenerateDisplayHearts : MonoBehaviour {
         HeartDisplayPosition = transform.position; //new Vector2(ScreenW - ScreenW, ScreenH - ScreenH + 10);
         for (int i = 0; i < 10; i++ )
         {
-            objectPool[i].GetComponent<Heart>().TurnHeartOn(HeartDisplayPosition);
+            objectPool[i].GetComponent<Heart>().TurnOn(HeartDisplayPosition);
             HeartDisplayPosition.x += 1.5f;
             if (i == 20)
                 i = 0;
