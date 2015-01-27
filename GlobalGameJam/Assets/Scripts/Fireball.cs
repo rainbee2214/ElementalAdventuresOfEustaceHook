@@ -4,7 +4,7 @@ using System.Collections;
 public class Fireball : Collectable 
 {
 	public float speed = 1f;
-	public int direction = -1;
+    public int direction = -1;
     public bool fire;
 
     Vector2 targetPosition;
@@ -20,8 +20,9 @@ public class Fireball : Collectable
         anim = GetComponent<Animator>();
     }
 
-	public void Fire(Vector2 position) 
+	public void Fire(Vector2 position, int parentDirection) 
 	{
+        direction = parentDirection;
         TurnOn(position);
         on = true;
         fire = false;
@@ -47,7 +48,7 @@ public class Fireball : Collectable
     }
 	void FixedUpdate () 
 	{
-        if (fire) Fire(transform.position);
+        if (fire) Fire(transform.position, -1);
         if (on)
         {
             targetPosition.Set(1000f * direction, transform.position.y);

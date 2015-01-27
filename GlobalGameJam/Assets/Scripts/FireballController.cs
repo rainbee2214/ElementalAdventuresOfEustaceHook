@@ -19,9 +19,9 @@ public class FireballController : MonoBehaviour
         //foreach (GameObject currency in pool) currency.SetActive(true);
     }
     
-    public void Fire(Vector2 position)
+    public void Fire(Vector2 position, int direction)
     {
-        pool[topOfPool].GetComponent<Fireball>().Fire(position);
+        pool[topOfPool].GetComponent<Fireball>().Fire(position, direction);
         topOfPool++; if (topOfPool >= pool.Count) topOfPool = 0;
     }
 }

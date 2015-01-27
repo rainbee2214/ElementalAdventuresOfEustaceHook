@@ -13,12 +13,12 @@ public class GameController : MonoBehaviour
     public MasterPool masterPool;
 
 	[Header("Player's Starting Stats")]
-	public int startHealth;
-	public int startStrength;
-	public int startArmor;
-	public int startFireStat;
-	public int startWaterStat;
-	public int startMagicStat;
+	public int startHealth = 3;
+	public int startStrength = 1;
+	public int startArmor = 1;
+	public int startFireStat = 1;
+	public int startWaterStat = 1;
+	public int startMagicStat = 1;
 
     public bool dead;
     #endregion

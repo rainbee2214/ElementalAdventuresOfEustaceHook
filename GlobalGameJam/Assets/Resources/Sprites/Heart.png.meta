@@ -2,8 +2,8 @@ fileFormatVersion: 2
 guid: 6db00cff90bcc204f8f138b0a0625bd8
 TextureImporter:
   fileIDToRecycleName:
-    21300000: Full_Heart
-    21300002: Empty_Heart
+    21300000: Full
+    21300002: Empty
   serializedVersion: 2
   mipmaps:
     mipMapMode: 0
@@ -45,7 +45,7 @@ TextureImporter:
   buildTargetSettings: []
   spriteSheet:
     sprites:
-    - name: Full_Heart
+    - name: Full
       rect:
         serializedVersion: 2
         x: 3
@@ -55,7 +55,7 @@ TextureImporter:
       alignment: 0
       pivot: {x: .5, y: .5}
       border: {x: 0, y: 0, z: 0, w: 0}
-    - name: Empty_Heart
+    - name: Empty
       rect:
         serializedVersion: 2
         x: 26

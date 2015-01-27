@@ -20,10 +20,16 @@ public class MagicBoss : EnemyBase
 	public float weaknessMultiplier;
 
     public bool fire;
+
+    [Range(-1,1)]
+    public int direction = -1;
+    public bool moveRight, moveLeft;
+    public float speed = 10f;
     #endregion
     #region Private
     FireballController fireballs;
     Animator anim;
+    Vector2 position;
     #endregion
 
     void Awake()
@@ -35,7 +41,25 @@ public class MagicBoss : EnemyBase
 
     public void Move()
     {
-
+        position = transform.position;
+        if (moveRight)
+        {
+            position.x += speed *Time.deltaTime;
+            anim.SetBool("WalkRight", true);
+            anim.SetBool("WalkLeft", false);
+        }
+        else if (moveLeft)
+        {
+            position.x -= speed * Time.deltaTime;
+            anim.SetBool("WalkLeft", true);
+            anim.SetBool("WalkRight", false);
+        }
+        else
+        {
+            anim.SetBool("WalkRight", false);
+            anim.SetBool("WalkLeft", false);
+        }
+        transform.position = position;
     }
 
     void FixedUpdate()
@@ -50,7 +74,7 @@ public class MagicBoss : EnemyBase
         anim.SetTrigger("Attack");
         fire = false;
         Vector2 firePosition = new Vector2(transform.position.x + offset.x, transform.position.y + offset.y);
-        fireballs.Fire(firePosition);
+        fireballs.Fire(firePosition, direction);
     }
 
 	void Die()
