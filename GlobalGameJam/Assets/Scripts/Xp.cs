@@ -4,7 +4,7 @@ using System.Collections;
 public class Xp : Collectable
 {
     #region Public
-    bool isTracking = false;
+    public bool isTracking = false;
     public float speed = 8.5f;
     #endregion
 
@@ -49,6 +49,7 @@ public class Xp : Collectable
 
     public override void Reset()
     {
+        base.Reset();
         isTracking = false;
     }
 

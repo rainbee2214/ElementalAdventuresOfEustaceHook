@@ -9,6 +9,7 @@ GameObject:
   m_Component:
   - 4: {fileID: 496804}
   - 114: {fileID: 11496804}
+  - 114: {fileID: 11401072}
   m_Layer: 0
   m_Name: GameController
   m_TagString: Untagged
@@ -23,11 +24,23 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 196804}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalPosition: {x: 7, y: -217, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 0
+--- !u!114 &11401072
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 196804}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 68b4328095b83ad419d0399ee181d00a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  sizes: 0a000000050000000a0000000f000000
 --- !u!114 &11496804
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -40,12 +53,13 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   bossController: {fileID: 0}
-  startHealth: 0
-  startStrength: 0
-  startArmor: 0
-  startFireStat: 0
-  startWaterStat: 0
-  startMagicStat: 0
+  startHealth: 10
+  startStrength: 1
+  startArmor: 1
+  startFireStat: 1
+  startWaterStat: 1
+  startMagicStat: 1
+  dead: 0
 --- !u!1001 &100100000
 Prefab:
   m_ObjectHideFlags: 1
