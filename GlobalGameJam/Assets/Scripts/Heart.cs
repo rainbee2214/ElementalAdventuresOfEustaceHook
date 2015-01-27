@@ -10,6 +10,7 @@ public class Heart : Collectable
         if (other.tag == "Player")
         {
             GameController.controller.playerStats.Health = value;
+            GameController.controller.uiController.UpdateHearts();
             Reset();
         }
     }

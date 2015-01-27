@@ -13,27 +13,21 @@ public class UIController : MonoBehaviour
     public float offset = 1f;
 
     public Sprite[] heartSprites;
-    public int testHeart;
-    public bool turnHeartOn, turnHeartOff;
 
     void Start ()
     {
         CreateHearts();
-        //heartSprites = new Sprite[2];
-        //heartSprites[0] = Resources.Load("Sprites/Heart/Empty", typeof(Sprite)) as Sprite;
-        //heartSprites[1] = Resources.Load("Sprites/Heart/Full", typeof(Sprite)) as Sprite;
     }
     void Update()
     {
         if (screenWidth != Screen.width || screenHeight != Screen.height) PositionUI();
-        if (turnHeartOn) TurnHeartOn(testHeart);
-        else if (turnHeartOff) TurnHeartOff(testHeart);
+
         WriteToText();
     }
 
     void WriteToText()
     {
-        healthText.text = "Health: " + GameController.controller.GetHealth();
+        healthText.text = "Level: " + GameController.controller.GetLevel();
     }
 
     void PositionUI()
@@ -41,13 +35,11 @@ public class UIController : MonoBehaviour
         screenWidth = Screen.width;
         screenHeight = Screen.height;
         healthText.rectTransform.position = new Vector3(screenWidth / 2f, screenHeight - screenHeight / 10f, 0);
-        //heart.rectTransform.position = new Vector3(screenWidth / 10f, screenHeight - screenHeight / 10f, 0);
         Vector3 position = new Vector3(screenWidth / 12f, screenHeight - screenHeight / 12f, 0);
         for (int i = 0; i < 10; i++)
         {
             hearts[i].rectTransform.position = position;
             position.x += offset;
-            //if (i > GameController.controller.playerStats.Health - 1) TurnHeartOff(i);
         }
     }
 
@@ -62,10 +54,16 @@ public class UIController : MonoBehaviour
 
     public void UpdateHearts()
     {
-        for (int i = 0; i < 10; i++)
+        int health = GameController.controller.playerStats.Health - 1;
+        for (int i = 0; i < health; i++)
         {
-            if (i > GameController.controller.playerStats.Health - 1) TurnHeartOff(i);
+            TurnHeartOn(i);
         }
+        for (int i = health; i < 10; i++)
+        {
+            TurnHeartOff(i);
+        }
+        
     }
     void CreateHearts()
     {
@@ -74,7 +72,7 @@ public class UIController : MonoBehaviour
         {
             hearts.Add(Instantiate(heart) as Image);
             hearts[i].transform.SetParent(transform);
-            if (i > GameController.controller.startHealth-1) TurnHeartOff(i);
+            if (i >= GameController.controller.startHealth-1) TurnHeartOff(i);
         }
     }
 }

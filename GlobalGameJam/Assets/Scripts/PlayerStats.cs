@@ -3,6 +3,27 @@ using System.Collections;
 
 public class PlayerStats
 {
+    float xp;
+    public float Xp
+    {
+        get { return xp; }
+        set { xp += value; }
+    }
+
+    float xpStep = 1;
+    public float XpStep
+    {
+        get { return xpStep; }
+        set { xpStep += value; }
+    }
+
+    int level;
+    public int Level
+    {
+        get { return level; }
+        set { level += value; }
+    }
+
 	int health;
 	public int Health
 	{

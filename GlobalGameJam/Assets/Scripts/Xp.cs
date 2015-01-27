@@ -5,14 +5,15 @@ public class Xp : Collectable
 {
     #region Public
     public bool isTracking = false;
-    public float speed = 8.5f;
     #endregion
 
     #region Private
+    float speed = 16f;
     int amount;
     Color currentColor;
     GameObject player;
     Vector2 targetPosition;
+    float value = 0.1f;
     #region
     public int Amount
     {
@@ -57,8 +58,8 @@ public class Xp : Collectable
     {
         newPosition.x += Random.Range(-16.0f, 16.1f);
         newPosition.y += Random.Range(0f, 5.1f);
-        if (newPosition.x < 5.0f && newPosition.x > -5.0f)
-            newPosition.x += 12.0f;
+            
+        base.TurnOn(newPosition);
         isTracking = true;
     }
 
@@ -66,6 +67,7 @@ public class Xp : Collectable
     {
         if (other.tag == "Player")
         {
+            GameController.controller.GainXp(value);
             Reset();
         }
     }

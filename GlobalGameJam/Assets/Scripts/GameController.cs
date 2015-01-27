@@ -52,6 +52,21 @@ public class GameController : MonoBehaviour
             dead = false;
             Application.LoadLevel("GameOver");
         }
+
+    }
+
+    void FixedUpdate()
+    {
+        UpdateStats();
+    }
+
+    void UpdateStats()
+    {
+        if (playerStats.Xp >= playerStats.XpStep)
+        {
+            playerStats.XpStep = playerStats.XpStep;
+            playerStats.Level = 1; //Add a level
+        }
     }
 
 	void SetupPlayerStats()
@@ -78,6 +93,21 @@ public class GameController : MonoBehaviour
     public int GetHealth()
     {
         return playerStats.Health;
+    }
+
+    public float GetXp()
+    {
+        return playerStats.Xp;
+    }
+
+    public float GetLevel()
+    {
+        return playerStats.Level;
+    }
+
+    public void GainXp(float value)
+    {
+        playerStats.Xp = value;
     }
 
     public void TakeDamage()

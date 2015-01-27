@@ -99,4 +99,9 @@ public class PlayerPhysics : MonoBehaviour
         }
 
     }
+
+    void OnCollisionEnter2D(Collision2D collision)
+    {
+        jumping = false;
+    }
 }
