@@ -223,7 +223,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   level: Menu
   loadOnClick: 0
-  delay: 3
+  delay: 1.60000002
 --- !u!82 &1699312971
 AudioSource:
   m_ObjectHideFlags: 0

@@ -16,6 +16,6 @@ public class LevelLoader : MonoBehaviour
     void Update()
     {
         if (!loadOnClick && Time.time > loadTime) Application.LoadLevel(level);
-        else if (loadOnClick) if (Input.anyKey) Application.LoadLevel(level);
+        else if (loadOnClick) if (Input.GetButtonDown("Jump")) Application.LoadLevel(level);
     }
 }
