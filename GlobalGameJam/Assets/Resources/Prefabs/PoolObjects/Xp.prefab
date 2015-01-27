@@ -52,7 +52,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7fedfb38db2cba747b58a056f9618025, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  isTracking: 0
   speed: 8.5
 --- !u!212 &21298020
 SpriteRenderer:

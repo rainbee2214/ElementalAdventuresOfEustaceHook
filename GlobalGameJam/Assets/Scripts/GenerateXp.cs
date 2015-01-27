@@ -11,7 +11,7 @@ public class GenerateXp : MonoBehaviour {
 
     public void CreateXp(Vector2 chestPosition)
     {
-        objectPool[current].GetComponent<Xp>().TurnXpOn(chestPosition);
+        //objectPool[current].GetComponent<Xp>().TurnXpOn(chestPosition);
         current++;
         if(current >= 10)
         {
