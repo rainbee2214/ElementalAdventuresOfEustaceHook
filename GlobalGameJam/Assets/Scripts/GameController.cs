@@ -7,7 +7,7 @@ public class GameController : MonoBehaviour
     public static GameController controller;
 
 	public BossController bossController;
-
+    public UIController uiController;
 	public PlayerStats playerStats;
     public static GameObject player;
     public MasterPool masterPool;
@@ -36,6 +36,7 @@ public class GameController : MonoBehaviour
         }
         player = GameObject.Find("Player");
         masterPool = GetComponent<MasterPool>();
+        uiController = GameObject.Find("Canvas").GetComponent<UIController>();
     }
 
     void Start()
@@ -83,5 +84,6 @@ public class GameController : MonoBehaviour
     {
         playerStats.Health = -1;
         if (playerStats.Health <= 0) dead = true;
+        uiController.UpdateHearts();
     }
 }
