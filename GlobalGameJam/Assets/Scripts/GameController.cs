@@ -6,6 +6,16 @@ public class GameController : MonoBehaviour
     #region Public
     public static GameController controller;
 
+    [HideInInspector]
+    public HeartController heartController;
+    [HideInInspector]
+    public ChestController chestController;
+    [HideInInspector]
+    public FireballController fireballController;
+    [HideInInspector]
+    public XpController xpController;
+    [HideInInspector]
+    public CurrencyController currencyController;
 	public BossController bossController;
     public UIController uiController;
 	public PlayerStats playerStats;
@@ -36,6 +46,11 @@ public class GameController : MonoBehaviour
         }
         player = GameObject.Find("Player");
         masterPool = GetComponent<MasterPool>();
+        heartController = GetComponent<HeartController>();
+        fireballController = GetComponent<FireballController>();
+        currencyController = GetComponent<CurrencyController>();
+        xpController = GetComponent<XpController>();
+        chestController = GetComponent<ChestController>();
         uiController = GameObject.Find("Canvas").GetComponent<UIController>();
     }
 

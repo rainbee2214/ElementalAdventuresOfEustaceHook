@@ -10,6 +10,11 @@ GameObject:
   - 4: {fileID: 496804}
   - 114: {fileID: 11496804}
   - 114: {fileID: 11401072}
+  - 114: {fileID: 11403846}
+  - 114: {fileID: 11403844}
+  - 114: {fileID: 11403842}
+  - 114: {fileID: 11403840}
+  - 114: {fileID: 11403838}
   m_Layer: 0
   m_Name: GameController
   m_TagString: Untagged
@@ -24,7 +29,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 196804}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 7, y: -217, z: 0}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
@@ -40,7 +45,68 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 68b4328095b83ad419d0399ee181d00a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  sizes: 0a000000050000000a0000000f000000
+  sizes: 0a000000050000000a0000000f0000000a000000
+--- !u!114 &11403838
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 196804}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 427b9ca886431c6429e8d1ad4bdf4a46, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  pool: []
+--- !u!114 &11403840
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 196804}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 03549dbe359d3e94c903de0350cf2344, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  pool: []
+--- !u!114 &11403842
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 196804}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: cde437ec379872a4a992c125f6660727, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  pool: []
+  topOfPool: 0
+--- !u!114 &11403844
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 196804}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8afc9e8e3f5fb5843b08f26a8f9e90ba, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  pool: []
+--- !u!114 &11403846
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 196804}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: aae9f4ae4f7733841928efd0852af986, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  pool: []
 --- !u!114 &11496804
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -53,7 +119,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   bossController: {fileID: 0}
-  startHealth: 10
+  uiController: {fileID: 0}
+  masterPool: {fileID: 0}
+  startHealth: 8
   startStrength: 1
   startArmor: 1
   startFireStat: 1

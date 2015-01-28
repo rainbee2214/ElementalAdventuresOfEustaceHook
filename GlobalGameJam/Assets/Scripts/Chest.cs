@@ -11,7 +11,7 @@ public class Chest : Collectable
 
     #region Private
     List<GameObject> xpPool;
-    int topOfXpPool;
+    
     #endregion
 
     void Start()
@@ -25,16 +25,18 @@ public class Chest : Collectable
         anim.SetTrigger("OpenChest");
         open = true;
 
-        for (int i = 0; i < Random.Range(0, 10); i++)
+        for (int i = 0; i < Random.Range(0, 10)%4; i++)
         {
             //Debug.Log("Generating coins!");
         }
         for (int i = 0; i < Random.Range(1,6); i++)
         {
             Debug.Log("Generating xp!");
-            xpPool[topOfXpPool].GetComponent<Xp>().TurnOn(transform.position);
-            topOfXpPool++;
-            if (topOfXpPool >= xpPool.Count) topOfXpPool++;
+            int topOfPool = GameController.controller.xpController.TopOfPool;
+            xpPool[topOfPool].GetComponent<Xp>().TurnOn(transform.position);
+            topOfPool++;
+            if (topOfPool >= xpPool.Count) topOfPool++;
+            GameController.controller.xpController.TopOfPool = topOfPool;
         }
     }
 
