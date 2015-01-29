@@ -49,6 +49,10 @@ public class PlayerPhysics : MonoBehaviour
         }
     }
 
+    public void Crouch()
+    {
+        playerAnimation.Crouch();
+    }
     public bool Grounded
     {
         get { return grounded; }

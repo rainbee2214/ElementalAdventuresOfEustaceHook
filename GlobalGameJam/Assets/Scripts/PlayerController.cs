@@ -22,7 +22,7 @@ public class PlayerController : MonoBehaviour
             else playerPhysics.Idle();
 
             if (Input.GetButtonDown("Jump")) playerPhysics.Jump();
-
+            if (Input.GetButton("Crouch")) playerPhysics.Crouch();
             playerPhysics.IsGrounded();
         }
     }

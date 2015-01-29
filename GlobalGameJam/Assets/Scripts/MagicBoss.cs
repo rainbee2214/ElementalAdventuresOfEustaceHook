@@ -87,7 +87,6 @@ public class MagicBoss : EnemyBase
         Move();
         if (fire) Fire();
         if (Health <= 0) Die();
-        else Debug.Log(Health);
 
         LookForPlayer();
         if (playerInAttackRange && Time.time > nextAttackTime) Fire();

@@ -10,7 +10,7 @@ TextureImporter:
     21300010: SpriteSheet_5
     21300012: SpriteSheet_6
     21300014: SpriteSheet_7
-    21300016: SpriteSheet_8
+    21300016: Crouch
   serializedVersion: 2
   mipmaps:
     mipMapMode: 0
@@ -132,15 +132,15 @@ TextureImporter:
       alignment: 0
       pivot: {x: .5, y: .5}
       border: {x: 0, y: 0, z: 0, w: 0}
-    - name: SpriteSheet_8
+    - name: Crouch
       rect:
         serializedVersion: 2
         x: 12
-        y: 411
+        y: 417
         width: 9
-        height: 27
-      alignment: 0
-      pivot: {x: .5, y: .5}
+        height: 21
+      alignment: 9
+      pivot: {x: .5, y: .699999988}
       border: {x: 0, y: 0, z: 0, w: 0}
   spritePackingTag: 
   userData: 
