@@ -6,9 +6,15 @@ public class CurrencyController : MonoBehaviour
 {
     #region Public
     public List<GameObject> pool;
+    public int TopOfPool
+    {
+        set { topOfPool = value; }
+        get { return topOfPool; }
+    }
     #endregion
 
     #region Private
+    int topOfPool;
     string name = "Currency";
     #endregion
 
