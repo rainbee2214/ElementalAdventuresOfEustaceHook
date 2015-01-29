@@ -128,7 +128,8 @@ public class GameController : MonoBehaviour
     public void TakeDamage()
     {
         playerStats.Health = -1;
-        if (playerStats.Health <= 0) dead = true;
         uiController.UpdateHearts();
+        Debug.Log(playerStats.Health);
+        if (playerStats.Health <= 1) dead = true;
     }
 }

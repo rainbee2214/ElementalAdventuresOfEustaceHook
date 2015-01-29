@@ -28,7 +28,7 @@ public class Chest : Collectable
 
         for (int i = 0; i < Random.Range(4, 10)%4; i++)
         {
-            Debug.Log("Generating coins!");
+            //Debug.Log("Generating coins!");
             int topOfPool = GameController.controller.currencyController.TopOfPool;
 
             Vector2 offset = new Vector2(Random.Range(2, 5), Random.Range(0f, 0.5f));
@@ -47,7 +47,7 @@ public class Chest : Collectable
         }
         for (int i = 0; i < Random.Range(1,6); i++)
         {
-            Debug.Log("Generating xp!");
+            //Debug.Log("Generating xp!");
             int topOfPool = GameController.controller.xpController.TopOfPool;
             xpPool[topOfPool].GetComponent<Xp>().TurnOn(transform.position);
             topOfPool++;

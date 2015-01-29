@@ -48,7 +48,8 @@ public class UIController : MonoBehaviour
 
     void TurnHeartOff(int index)
     {
-        hearts[index].sprite = heartSprites[0];
+        if (index >= 0)
+            hearts[index].sprite = heartSprites[0];
     }
     void TurnHeartOn(int index)
     {

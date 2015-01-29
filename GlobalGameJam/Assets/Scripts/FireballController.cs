@@ -22,6 +22,7 @@ public class FireballController : MonoBehaviour
     public void Fire(Vector2 position, int direction)
     {
         pool[topOfPool].GetComponent<Fireball>().Fire(position, direction);
-        topOfPool++; if (topOfPool >= pool.Count) topOfPool = 0;
+        topOfPool++; 
+        if (topOfPool >= pool.Count) topOfPool = 0;
     }
 }
