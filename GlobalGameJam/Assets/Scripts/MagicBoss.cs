@@ -84,6 +84,24 @@ public class MagicBoss : EnemyBase
 
     void FixedUpdate()
     {
+        if (playerInRange)
+        {
+            if (currentDirection.x < 0f)
+            {
+                moveRight = false;
+                moveLeft = true;
+            }
+            else if (currentDirection.x > 0)
+            {
+                moveLeft = false;
+                moveRight = true;
+            }
+        }
+        else
+        {
+            moveLeft = false;
+            moveRight = false;
+        }
         Move();
         if (fire) Fire();
         if (Health <= 0) Die();
@@ -97,7 +115,7 @@ public class MagicBoss : EnemyBase
         anim.SetTrigger("Attack");
         fire = false;
         Vector2 firePosition = new Vector2(transform.position.x + offset.x, transform.position.y + offset.y);
-        fireballs.Fire(firePosition, direction);
+        fireballs.Fire(firePosition, (int)currentDirection.x);
         nextAttackTime = Time.time + attackDelay;
     }
 

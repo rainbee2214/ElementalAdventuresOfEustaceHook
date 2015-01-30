@@ -18,11 +18,11 @@ public class PlayerController : MonoBehaviour
     {
         if (ableToMove)
         {
-            if (Mathf.Abs(Input.GetAxisRaw("Horizontal")) > 0) playerPhysics.Move(Input.GetAxisRaw("Horizontal"));
+            if (Input.GetButton("Crouch")) playerPhysics.Crouch();
+            else if (Mathf.Abs(Input.GetAxisRaw("Horizontal")) > 0) playerPhysics.Move(Input.GetAxisRaw("Horizontal"));
             else playerPhysics.Idle();
 
             if (Input.GetButtonDown("Jump")) playerPhysics.Jump();
-            if (Input.GetButton("Crouch")) playerPhysics.Crouch();
             playerPhysics.IsGrounded();
         }
     }
