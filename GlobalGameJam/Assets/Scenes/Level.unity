@@ -1255,7 +1255,7 @@ Transform:
   - {fileID: 494587434}
   - {fileID: 230628312}
   m_Father: {fileID: 0}
-  m_RootOrder: 0
+  m_RootOrder: 1
 --- !u!1001 &625330624
 Prefab:
   m_ObjectHideFlags: 0
@@ -1753,7 +1753,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 1
+  m_RootOrder: 2
 --- !u!1 &713830290
 GameObject:
   m_ObjectHideFlags: 0
@@ -3021,7 +3021,7 @@ Transform:
   m_PrefabInternal: {fileID: 1726194739}
   m_GameObject: {fileID: 951516980}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 2.31999993, y: 1.11000001, z: 0}
+  m_LocalPosition: {x: -9.93999958, y: 1.11000001, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 760182520}
@@ -3304,7 +3304,7 @@ RectTransform:
   - {fileID: 876048731}
   - {fileID: 1491544591}
   m_Father: {fileID: 0}
-  m_RootOrder: 2
+  m_RootOrder: 0
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
   m_AnchoredPosition: {x: 0, y: 0}
@@ -4803,6 +4803,7 @@ GameObject:
   - 4: {fileID: 1477427665}
   - 212: {fileID: 1477427667}
   - 61: {fileID: 1477427666}
+  - 68: {fileID: 1477427668}
   m_Layer: 8
   m_Name: Ground
   m_TagString: Ground
@@ -4829,7 +4830,7 @@ BoxCollider2D:
     type: 2}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1477427664}
-  m_Enabled: 1
+  m_Enabled: 0
   m_Material: {fileID: 0}
   m_IsTrigger: 0
   m_Size: {x: 24.3999996, y: 3.4000001}
@@ -4857,6 +4858,19 @@ SpriteRenderer:
   m_SortingOrder: 0
   m_Sprite: {fileID: 21300014, guid: b10c93993f5b0452e883fd20c5b8906b, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
+--- !u!68 &1477427668
+EdgeCollider2D:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1477427664}
+  m_Enabled: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Points:
+  - {x: -12.0816193, y: 1.73626709}
+  - {x: -.11756897, y: 1.69680786}
+  - {x: 10.0296631, y: 1.65734863}
 --- !u!1 &1488911221
 GameObject:
   m_ObjectHideFlags: 0
@@ -5533,7 +5547,7 @@ Prefab:
     m_Modifications:
     - target: {fileID: 469010, guid: 15df8b6cfee6bc64aab0706457bf6122, type: 2}
       propertyPath: m_LocalPosition.x
-      value: 2.31999993
+      value: -9.93999958
       objectReference: {fileID: 0}
     - target: {fileID: 469010, guid: 15df8b6cfee6bc64aab0706457bf6122, type: 2}
       propertyPath: m_LocalPosition.y
