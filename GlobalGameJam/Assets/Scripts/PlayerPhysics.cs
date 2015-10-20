@@ -34,7 +34,7 @@ public class PlayerPhysics : MonoBehaviour
 
         if (jumping)
         {
-            rigidbody2D.gravityScale = 0;
+            GetComponent<Rigidbody2D>().gravityScale = 0;
             //Debug.Log(rigidbody2D.gravityScale);
             transform.position = Vector2.Lerp(transform.position, jumpLocation, Time.deltaTime * jumpSpeed);
             if (Mathf.Abs(transform.position.y) + delta > Mathf.Abs(jumpLocation.y))
@@ -45,7 +45,7 @@ public class PlayerPhysics : MonoBehaviour
         }
         else
         {
-            rigidbody2D.gravityScale = gravityScale;
+            GetComponent<Rigidbody2D>().gravityScale = gravityScale;
         }
     }
 
